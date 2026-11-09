@@ -118,7 +118,7 @@ function detail(dir, list, it, i, kick) {
   const meta = (it.meta || []).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
   const body = `
 <a class="back" href="${p}${dir === "study" ? "studies" : dir}.html">← ${kick} 목록</a>
-<div class="dhead"><p class="kick">${esc(it.en || [it.year, it.badge].filter(Boolean).join(" · "))}</p><h1>${esc(it.title || it.name)}</h1><p class="lede">${esc(it.summary)}</p></div>
+<div class="dhead"><p class="kick">${esc(it.en || [it.year, it.badge].filter(Boolean).join(" · "))}</p><h1>${esc(it.title || it.name)}</h1><p class="lede">${esc(it.summary)}</p>${(it.links || []).length ? `<div class="btns">${it.links.map(([l, u]) => `<a class="btn" href="${esc(u)}" target="_blank" rel="noopener">${esc(l)} ↗</a>`).join("")}</div>` : ""}</div>
 <figure class="dhero">${img(it.img, it.title || it.name, p)}</figure>
 <div class="dbody">
   <div class="prose">${(it.body || []).map((x) => `<p>${x}</p>`).join("")}${it.why ? `<p class="why">${esc(it.why)}</p>` : ""}${it.link && dir === "study" ? `<p><a href="${p}${it.link}" style="border-bottom:1px solid">관련 작업 보기 →</a></p>` : ""}</div>
