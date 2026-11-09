@@ -193,3 +193,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .dhero.fit img{object-fit:contain;background:var(--paper);max-height:820px;aspect-ratio:auto;height:820px}
 .gallery.fit img{object-fit:contain;background:var(--paper);aspect-ratio:3/4}
 @media (max-width:600px){.dhero.fit img{height:auto}}
+
+/* 기록 갤러리 (masonry) */
+.mg{padding:0 0 56px}
+.mg-h{font-family:var(--serif);font-size:22px;margin-bottom:18px}
+.mg:not(.has):not(.editing){display:none}
+.masonry{columns:3 260px;column-gap:14px}
+.mg-i{display:block;break-inside:avoid;margin-bottom:14px;cursor:zoom-in;position:relative}
+.mg-i img{width:100%;height:auto;display:block}
+.mg-i:hover img{opacity:.9}
+.lb{position:fixed;inset:0;background:rgba(10,12,20,.92);display:none;align-items:center;justify-content:center;z-index:50;padding:24px}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:100%;object-fit:contain}
+.lb button{position:absolute;background:none;border:0;color:#fff;font-size:34px;cursor:pointer;padding:12px 18px;font-family:var(--sans)}
+.lb .x{top:8px;right:8px}.lb .pv{left:4px;top:50%;transform:translateY(-50%)}.lb .nx{right:4px;top:50%;transform:translateY(-50%)}
+.profile{margin-bottom:28px}
+.profile img,.profile .ph{width:100%;aspect-ratio:4/5;object-fit:cover}
+/* 편집 모드 */
+.ed-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:40;background:var(--ink);color:var(--bg);padding:10px 14px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:13px;max-width:760px;margin:0 auto}
+.ed-bar input{flex:1;min-width:180px;padding:6px 8px;border:0;font:inherit}
+.ed-bar button,.ed-add{font:inherit;font-size:13px;padding:7px 12px;border:1px solid currentColor;background:none;color:inherit;cursor:pointer}
+.ed-add{color:var(--acc);border-color:var(--acc);margin:0 0 16px;font-weight:600}
+.ed-status{font-size:13px;color:var(--mute);margin:-6px 0 14px}

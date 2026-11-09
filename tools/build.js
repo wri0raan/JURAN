@@ -6,6 +6,8 @@ const ROOT = path.join(__dirname, "..");
 
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const MISSING = new Set();
+const IMG_RE = /\.(jpe?g|png|gif|webp)$/i;
+const scanDir = (key) => { const d = path.join(ROOT, "images", "gallery", key); return fs.existsSync(d) ? fs.readdirSync(d).filter((f) => IMG_RE.test(f)).sort().map((f) => `gallery/${key}/${f}`) : []; };
 const has = (src) => src && fs.existsSync(path.join(ROOT, "images", src));
 function img(src, alt, p) {
   if (has(src)) return `<img src="${p}images/${src}" alt="${esc(alt)}" loading="lazy">`;
@@ -114,9 +116,9 @@ function detail(dir, list, it, i, kick) {
   const p = "../";
   const prev = list[i - 1], next = list[i + 1];
   const href = (x) => (x.link && dir === "activities" ? p + x.link : `${x.slug}.html`);
-  (it.gallery || []).filter((g) => !has(g)).forEach((g) => MISSING.add(g));
-  const gl = (it.gallery || []).filter(has);
-  const gallery = gl.length ? `<div class="gallery${it.fit ? " fit" : ""}">${gl.map((g) => img(g, it.title || it.name, p)).join("")}</div>` : "";
+  const key = `${dir}-${it.slug}`;
+  const gl = [...new Set([...(it.gallery || []).filter(has), ...scanDir(key)])];
+  const gallery = `<section class="mg" data-key="${key}"><h2 class="mg-h">기록</h2><div class="masonry">${gl.map((g) => `<a class="mg-i" href="${p}images/${g}" data-name="${esc(g.split("/").pop())}"><img src="${p}images/${g}" alt="${esc(it.title || it.name)}" loading="lazy"></a>`).join("")}</div></section>`;
   const video = it.video ? `<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/${it.video}" title="${esc(it.title)} 영상" loading="lazy" allowfullscreen></iframe></div>` : "";
   const meta = (it.meta || []).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
   const body = `
@@ -144,7 +146,8 @@ C.studies.forEach((it, i, a) => detail("study", a, it, i, "배움"));
 <div class="dhead"><p class="kick">ABOUT</p><h1>소개</h1></div>
 <section class="sec"><div class="dbody" style="padding:0">
   <div class="prose"><p class="about-lead">${esc(A.lead)}</p>${A.story.map((s) => `<p>${esc(s)}</p>`).join("")}<p style="color:var(--mute);font-size:15px">${esc(A.early)}</p></div>
-  <dl class="meta"><dt>관심 분야</dt>${A.interests.map((x) => `<dd>${esc(x)}</dd>`).join("")}</dl>
+  <div><figure class="profile" data-profile><img src="images/profile.jpg" alt="${esc(C.name)} 프로필 사진" onerror="this.outerHTML='<div class=&quot;ph&quot;><span>프로필 사진</span></div>'"></figure>
+  <dl class="meta"><dt>관심 분야</dt>${A.interests.map((x) => `<dd>${esc(x)}</dd>`).join("")}</dl></div>
 </div></section>
 <section class="sec">${sh("", "경력")}${tl(A.experience)}</section>
 <section class="sec">${sh("", "학력")}${tl(A.education.map(([a, b]) => ["", a, b]))}</section>
