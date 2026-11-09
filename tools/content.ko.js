@@ -63,14 +63,16 @@ module.exports = {
 
   projects: [
     {
-      slug: "acupoint", title: "한방 침자리 실시간 트래킹", year: "2025", badge: "박물관 전시",
-      img: "acupoint.jpg", tags: ["Unity", "MediaPipe", "트래킹"], home: true,
-      summary: "몸 위의 침자리를 실시간으로 찾아 보여주는 전시 프로그램. 국립중앙박물관과 국립과천과학관에 전시됐습니다.",
+      slug: "acupoint", title: "AI 실시간 트래킹 프로젝트", year: "2025", badge: "박물관 전시",
+      img: "acupoint.jpg", tags: ["Unity", "MediaPipe", "트래킹", "전시"], home: true,
+      summary: "몸을 실시간으로 추적하는 트래킹 기술로 한방 침자리 체험과 미니게임들을 만들었고, 국립중앙박물관과 국립과천과학관 전시까지 이어졌습니다.",
       body: [
-        "스윙크 개발팀 인턴으로 일하며 만든 전시 프로그램입니다. Unity와 MediaPipe 포즈 추정으로 관람객의 몸을 실시간으로 추적하고, 그 위에 침자리를 표시합니다.",
-        "국립중앙박물관과 국립과천과학관에 전시됐습니다. 연구용 데모가 아니라 처음 보는 관람객 누구나 바로 쓰는 환경이라, 다양한 체형과 조명에서도 안정적으로 동작하게 만드는 것이 중요했습니다.",
+        "스윙크 개발팀 인턴으로 일하며 Unity와 MediaPipe 포즈 추정을 바탕으로 한 트래킹 콘텐츠를 만들었습니다. 관람객의 몸을 실시간으로 추적해 그 위에 정보를 보여주거나, 몸을 움직여 플레이하는 방식입니다.",
+        "<b>한방 침자리 트래킹</b> · 관람객의 몸 위에 침자리를 실시간으로 찾아 표시하는 체험입니다.",
+        "<b>트래킹 미니게임</b> · 같은 트래킹 기술로 몸을 움직여 즐기는 미니게임들도 만들었습니다.",
+        "최종적으로 국립중앙박물관과 국립과천과학관에 전시됐습니다. 연구용 데모가 아니라 처음 보는 관람객 누구나 바로 쓰는 환경이라, 다양한 체형과 조명에서도 안정적으로 동작하게 만드는 것이 중요했습니다.",
       ],
-      meta: [["기간", "2025.08 – 2025.12"], ["소속", "스윙크 개발팀 인턴"], ["기술", "Unity · MediaPipe"]],
+      meta: [["기간", "2025.08 – 2025.12"], ["소속", "스윙크 개발팀 인턴"], ["기술", "Unity · MediaPipe"], ["전시", "국립중앙박물관 · 국립과천과학관"]],
     },
     {
       slug: "xr-spatial", title: "CoSpace 공간 배치 시각화", year: "2026 –", badge: "쿼레이트",
@@ -116,7 +118,7 @@ module.exports = {
     },
     {
       slug: "wordchain", title: "AI 끝말잇기 게임", year: "2025", badge: "스윙크",
-      img: "wordchain.jpg", tags: ["AI", "교육 게임"],
+      img: "wordchain.jpg", tags: ["AI", "교육 게임"], home: true,
       summary: "AI와 끝말잇기를 하며 배우는 학습 게임입니다.",
       body: ["스윙크 개발팀 인턴 기간에 만든 AI 학습 게임입니다."],
       meta: [["기간", "2025"], ["소속", "스윙크"]],
@@ -130,14 +132,14 @@ module.exports = {
     },
     {
       slug: "code-black", title: "Code Black", year: "", badge: "C++ · SDL2",
-      img: "codeblack.jpg", tags: ["C++", "SDL2", "게임"],
+      img: "codeblack.png", tags: ["C++", "SDL2", "게임"],
       summary: "C++와 SDL2로 처음부터 만든 생존 대결 게임입니다.",
       body: ["엔진 없이 C++와 SDL2로 처음부터 만든 생존 대결 게임입니다."],
       meta: [["도구", "C++ · SDL2"]],
     },
     {
       slug: "frozen-murder", title: "Frozen Murder", year: "", badge: "콘텐츠",
-      img: "frozen.jpg", tags: ["스토리", "장르 전환"],
+      img: "frozen.png", tags: ["스토리", "장르 전환"],
       summary: "겨울 왕국 이야기를 살인 미스터리로 바꾼 장르 전환 콘텐츠입니다.",
       body: ["겨울 왕국 이야기를 수사 중심의 살인 미스터리로 다시 짠 장르 전환 콘텐츠 프로젝트입니다."],
       meta: [["분야", "스토리 · 콘텐츠"]],

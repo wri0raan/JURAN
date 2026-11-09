@@ -83,9 +83,9 @@ function write(rel, html) {
   <figure>${img(C.heroImg.src, C.heroImg.cap, p)}<figcaption>${esc(C.heroImg.cap)}</figcaption></figure>
 </section>
 <section class="sec" id="research">${sh("01", "연구", "research.html")}
-  <div class="grid">${C.research.slice(0, 3).map((r) => card(r, "research", p)).join("")}</div></section>
+  <div class="grid tall">${C.research.map((r) => card(r, "research", p)).join("")}</div></section>
 <section class="sec" id="projects">${sh("02", "프로젝트", "projects.html")}
-  <div class="grid">${C.projects.filter((x) => x.home).slice(0, 6).map((r) => card(r, "projects", p)).join("")}</div></section>
+  <div class="grid wide">${C.projects.filter((x) => x.home).slice(0, 6).map((r) => card(r, "projects", p)).join("")}</div></section>
 <section class="sec" id="activities">${sh("03", "활동", "activities.html")}
   <div class="list">${C.activities.map((x) => actRow(x, p)).join("")}</div></section>
 <section class="sec" id="studies">${sh("04", "배움", "studies.html", "공학 밖에서 배운 것들")}
@@ -97,8 +97,8 @@ function write(rel, html) {
 // ---------- list pages
 const listPage = (file, title, sub, inner) =>
   write(file, page({ title: `${title} · ${C.name}`, p: "", current: file, body: `<div class="dhead"><p class="kick">${esc(sub)}</p><h1>${title}</h1></div><section class="sec">${inner}</section>` }));
-listPage("research.html", "연구", "RESEARCH", `<div class="grid two">${C.research.map((r) => card(r, "research", "")).join("")}</div>`);
-listPage("projects.html", "프로젝트", "PROJECTS", `<div class="grid">${C.projects.map((r) => card(r, "projects", "")).join("")}</div>`);
+listPage("research.html", "연구", "RESEARCH", `<div class="grid tall">${C.research.map((r) => card(r, "research", "")).join("")}</div>`);
+listPage("projects.html", "프로젝트", "PROJECTS", `<div class="grid wide">${C.projects.map((r) => card(r, "projects", "")).join("")}</div>`);
 listPage("activities.html", "활동", "ACTIVITIES", `<div class="list">${C.activities.map((x) => actRow(x, "")).join("")}</div>`);
 listPage("studies.html", "배움", "공학 밖에서 배운 것들",
   `<p class="prose" style="max-width:720px;margin-bottom:36px;color:var(--body)">가상 공간과 옷, 움직임을 제대로 만들고 싶어서 공학 밖의 수업들도 찾아 들었습니다. 지금 하는 연구의 관심이 어디서 왔는지 보여주는 기록입니다.</p>
