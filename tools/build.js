@@ -61,6 +61,8 @@ function contactBlock() {
   const items = [];
   if (C.email) items.push(`<a href="mailto:${esc(C.email)}"><small>이메일</small>${esc(C.email)}</a>`);
   items.push(`<a href="https://github.com/${C.github}" rel="noopener"><small>GitHub</small>@${C.github}</a>`);
+  if (C.phone) items.push(`<a href="tel:${esc(C.phone.replace(/[^0-9+]/g, ""))}"><small>전화</small>${esc(C.phone)}</a>`);
+  if (C.linkedin) items.push(`<a href="${esc(C.linkedin)}" target="_blank" rel="noopener"><small>LinkedIn</small>${esc(C.linkedin.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>`);
   return `<div class="contact">${items.join("")}</div>`;
 }
 
