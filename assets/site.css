@@ -189,3 +189,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .stats a+a{padding-left:12px}
   .stats a:nth-child(3){padding-left:0}
 }
+
+.dhero.fit img{object-fit:contain;background:var(--paper);max-height:820px;aspect-ratio:auto;height:820px}
+.gallery.fit img{object-fit:contain;background:var(--paper);aspect-ratio:3/4}
+@media (max-width:600px){.dhero.fit img{height:auto}}
