@@ -9,6 +9,19 @@ module.exports = {
   heroIntro:
     "컴퓨터그래픽스 연구실에서 물리 기반 시뮬레이션으로 연구를 시작했고, 지금은 단안 영상에서 반려견의 보행을 3D로 복원하는 졸업논문을 쓰고 있습니다. 공연과 전시, 문화유산처럼 사람들이 직접 보고 반응하는 콘텐츠를 가능하게 하는 기술을 만들고 싶습니다.",
   heroImg: { src: "cucg.jpg", cap: "CUCG Lab 동료들과" },
+  heroTiles: [
+    ["animatronics.png", "외부 자력 촉수 애니메트로닉스", "research/animatronics.html"],
+    ["xrcafe.png", "XR 테이크아웃 카페", "research/xr-cafe.html"],
+    ["siggraph-2022-1.jpg", "SIGGRAPH Asia", "activities/siggraph-2022.html"],
+    ["sangun.jpg", "산군 · 10명 팀 리드", "projects/sangun.html"],
+  ],
+  heroNow: "지금 · 반려견 보행 3D 복원 졸업논문 · 쿼레이트 CoSpace 1인 개발",
+  stats: [
+    ["4", "편", "논문 · 발표", "제1저자 2편", "about.html"],
+    ["3", "회", "수상", "HCI Korea · KCGS · 지질학회", "about.html"],
+    ["2", "곳", "국립 기관 전시", "국립중앙박물관 · 국립과천과학관", "projects/acupoint.html"],
+    ["2", "회", "SIGGRAPH Asia 선발", "2022 대구 · 2024 도쿄", "activities.html"],
+  ],
   heroMeta: [
     ["소속", "가톨릭대 CUCG Lab"],
     ["수상", "KCGS · HCI Korea"],

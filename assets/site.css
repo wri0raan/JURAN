@@ -159,3 +159,33 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .btn{display:inline-block;padding:9px 16px;border:1px solid var(--acc);color:var(--acc);font-size:14px;font-weight:500}
 .btn:first-child{background:var(--acc);color:#fff}
 .btn:hover{opacity:.85}
+
+/* hero impact */
+.hero{border-bottom:0;padding-bottom:44px;grid-template-columns:1fr 1.05fr;align-items:center}
+.hero h1{font-size:clamp(32px,3.9vw,48px)}
+.now{margin-top:26px;display:inline-flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:6px 14px 6px 12px;border-radius:999px}
+.now .dot{width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px color-mix(in srgb,var(--acc) 18%,transparent);flex:none}
+.mosaic{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:repeat(3,1fr);gap:10px;height:470px}
+.mosaic a{position:relative;overflow:hidden;display:block;min-height:0}
+.mosaic a:first-child{grid-row:span 3}
+.mosaic img,.mosaic .ph{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.mosaic a:hover img{transform:scale(1.04)}
+.mosaic span{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 10px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(10,14,30,.72))}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
+.stats a{padding:24px 20px 26px 0;display:block}
+.stats a+a{padding-left:20px;border-left:1px solid var(--line)}
+.stats b{display:block;font-family:var(--serif);font-size:clamp(40px,5vw,60px);line-height:1;color:var(--acc);font-weight:700;letter-spacing:-.02em}
+.stats b small{font-size:.38em;margin-left:3px;color:var(--ink);font-weight:600}
+.stats span{display:block;margin-top:10px;font-weight:600;font-size:15px}
+.stats em{display:block;font-style:normal;font-size:12.5px;color:var(--mute);margin-top:2px}
+.stats a:hover span{color:var(--acc)}
+@media (max-width:900px){.mosaic{height:auto;aspect-ratio:4/3}.stats{grid-template-columns:repeat(2,1fr)}.stats a:nth-child(3){padding-left:0;border-left:0}.stats a:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:28px}
+  .mosaic a:not(:first-child) span{display:none}
+}
+@media (max-width:600px){
+  .stats a{padding:18px 12px 20px 0}
+  .stats a+a{padding-left:12px}
+  .stats a:nth-child(3){padding-left:0}
+}

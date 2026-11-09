@@ -80,10 +80,11 @@ function write(rel, html) {
     <p class="kick">VISUAL COMPUTING · ${esc(C.tagline)}</p>
     <h1>${esc(a)}<br><em>${esc(b)}</em><br>${esc(c)}</h1>
     <p class="intro">${esc(C.heroIntro)}</p>
-    <div class="facts">${C.heroMeta.map(([k, v]) => `<span>${esc(k)}<b>${esc(v)}</b></span>`).join("")}</div>
+    <p class="now"><span class="dot"></span>${esc(C.heroNow)}</p>
   </div>
-  <figure>${img(C.heroImg.src, C.heroImg.cap, p)}<figcaption>${esc(C.heroImg.cap)}</figcaption></figure>
+  <div class="mosaic">${C.heroTiles.map(([src, cap, href]) => `<a href="${p}${href}">${img(src, cap, p)}<span>${esc(cap)}</span></a>`).join("")}</div>
 </section>
+<section class="stats">${C.stats.map(([n, u, k, d, href]) => `<a href="${p}${href}"><b>${n}<small>${u}</small></b><span>${esc(k)}</span><em>${esc(d)}</em></a>`).join("")}</section>
 <section class="sec" id="research">${sh("01", "연구", "research.html")}
   <div class="grid tall">${C.research.map((r) => card(r, "research", p)).join("")}</div></section>
 <section class="sec" id="projects">${sh("02", "프로젝트", "projects.html")}
