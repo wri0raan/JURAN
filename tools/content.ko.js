@@ -228,16 +228,15 @@ module.exports = {
       summary: "2022년 1월, NVIDIA 딥러닝 교육 과정에 참여했습니다.",
       body: ["2022년 1월 5일부터 6일까지 NVIDIA 딥러닝 교육 과정에 참여해 딥러닝의 기초를 실습으로 배웠습니다. 이후 컴퓨터그래픽스와 딥러닝 수업, 그리고 지금의 비전 연구로 이어진 출발점입니다."],
       meta: [["기간", "2022.01.05 – 01.06"], ["주관", "NVIDIA"]] },
-    { slug: "gdgoc", year: "2024 – 2026", name: "GDGoC · 팀 리더 (CookieDough · DevRel)", role: "팀 리더 2회", img: "gdgoc.jpg", gallery: ["gdgoc-1.jpg", "gdgoc-2.jpg"],
-      summary: "구글 개발자 학생 커뮤니티 GDGoC에서 Unity 개발팀 ‘CookieDough’를 이끌었고, 이후 행사 기획과 부스 운영을 맡는 DevRel 팀의 리더가 됐습니다.",
+    { slug: "gdgoc", year: "2025 – 2026", name: "GDGoC · 팀 리더 (반죽뭉치 · DevRel)", role: "팀 리더 2회", img: "gdgoc.jpg", gallery: ["gdgoc-1.jpg", "gdgoc-2.jpg"],
+      summary: "구글 개발자 학생 커뮤니티 GDGoC에서 Unity 스터디팀 ‘반죽뭉치’를 이끌었고, 이듬해 6기에서는 행사 기획과 부스 운영을 맡는 DevRel 팀의 리더가 됐습니다.",
       body: [
-        "Google Developer Groups on Campus(GDGoC)에서 Unity 중심 개발팀 ‘CookieDough(반죽뭉치)’의 팀 리더를 맡았습니다.",
-        "한 학기 동안 Unity 스터디를 직접 기획하고 운영하며 기초 개념부터 실습, 프로젝트 제작까지 단계별 커리큘럼을 짰습니다. 매주 학습 인증과 진행 상황을 공유해 팀원들이 끝까지 참여하도록 했고, 함께 2D·3D 미니게임을 만들었습니다.",
-        "활동을 인정받아 운영진 제안을 받았고, 2025년 하반기부터 2026년 상반기까지 DevRel 팀의 팀 리더로 활동했습니다. 커뮤니티 행사를 기획하고, 부스를 운영하고, 멤버들이 서로 친해질 수 있는 자리를 만들었습니다.",
-        "Growth 프로그램(Tick Tech Talk 스터디)과 Networking, Professionalism 프로그램을 수료했고, 2026년 6기에서는 Python 스터디와 XR 스터디도 함께 수료했습니다.",
+        "Google Developer Groups on Campus CUK(GDGoC)에서 두 해 연속 팀 리더를 맡았습니다.",
+        "<b>반죽뭉치(CookieDough) 팀 리더 · 2025</b> · C#·Unity 스터디를 직접 기획하고 운영하며 기초 개념부터 실습, 프로젝트 제작까지 단계별 커리큘럼을 짰습니다. 매주 학습 인증과 진행 상황을 공유해 팀원들이 끝까지 참여하도록 했고, 함께 2D·3D 미니게임을 만들었습니다. Growth 프로그램(Tick Tech Talk 스터디)과 Networking, Professionalism 프로그램을 수료했습니다.",
+        "<b>DevRel 팀 리더 · 2026 (6기)</b> · 활동을 인정받아 운영진 제안을 받았고, 6기에서 DevRel 팀을 이끌었습니다. 커뮤니티 행사를 기획하고, 부스를 운영하고, 멤버들이 서로 친해질 수 있는 자리를 만들었습니다. 같은 기수에 Python 스터디와 XR 스터디도 수료했습니다.",
         "혼자 공부하던 습관에서 벗어나, 함께 배우며 성장하는 즐거움을 알게 된 경험입니다.",
       ],
-      meta: [["CookieDough(반죽뭉치) 팀 리더", "2024.03 – 2024.09"], ["DevRel 팀 리더", "2025 하반기 – 2026 상반기"], ["수료", "C#·Unity 스터디 (2025.03–06) · Python·XR 스터디 (2026.03–06)"]] },
+      meta: [["반죽뭉치 팀 리더", "2025.03 – 2025.06"], ["DevRel 팀 리더", "2026.03 – 2026.06 (6기)"], ["수료", "C#·Unity 스터디 (2025) · Python·XR 스터디 (2026)"]] },
   ],
 
   about: {
