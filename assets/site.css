@@ -95,7 +95,8 @@ figure figcaption{font-size:12px;color:var(--mute);margin-top:10px}
 .contact a:hover{border-color:var(--acc)}
 
 /* placeholder for missing images */
-.ph{display:grid;place-items:center;background:repeating-linear-gradient(135deg,transparent 0 10px,rgba(0,0,0,.025) 10px 20px),var(--paper);border:1px dashed var(--line);color:var(--mute);font-size:12px;text-align:center;padding:8px}
+.ph{display:flex;align-items:flex-end;background:linear-gradient(160deg,var(--paper),color-mix(in srgb,var(--acc) 9%,var(--paper)));border:1px solid var(--line);padding:16px}
+.ph span{font-family:var(--serif);font-weight:700;font-size:15px;color:var(--acc);line-height:1.35;max-width:80%}
 
 /* detail pages */
 .back{display:inline-block;margin:28px 0 0;font-size:14px;color:var(--mute)}

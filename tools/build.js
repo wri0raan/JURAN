@@ -5,10 +5,12 @@ const C = require("./content.ko.js");
 const ROOT = path.join(__dirname, "..");
 
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const MISSING = new Set();
 const has = (src) => src && fs.existsSync(path.join(ROOT, "images", src));
 function img(src, alt, p) {
   if (has(src)) return `<img src="${p}images/${src}" alt="${esc(alt)}" loading="lazy">`;
-  return `<div class="ph" role="img" aria-label="${esc(alt)} 사진 자리">사진 자리<br>images/${esc(src || "")}</div>`;
+  MISSING.add(src);
+  return `<div class="ph" role="img" aria-label="${esc(alt)}"><span>${esc(alt)}</span></div><!-- 사진: images/${esc(src || "")} -->`;
 }
 
 const NAV = [["research.html", "연구"], ["projects.html", "프로젝트"], ["activities.html", "활동"], ["studies.html", "배움"], ["about.html", "소개"]];
@@ -109,7 +111,9 @@ function detail(dir, list, it, i, kick) {
   const p = "../";
   const prev = list[i - 1], next = list[i + 1];
   const href = (x) => (x.link && dir === "activities" ? p + x.link : `${x.slug}.html`);
-  const gallery = (it.gallery || []).length ? `<div class="gallery">${it.gallery.map((g) => img(g, it.title, p)).join("")}</div>` : "";
+  (it.gallery || []).filter((g) => !has(g)).forEach((g) => MISSING.add(g));
+  const gl = (it.gallery || []).filter(has);
+  const gallery = gl.length ? `<div class="gallery">${gl.map((g) => img(g, it.title || it.name, p)).join("")}</div>` : "";
   const video = it.video ? `<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/${it.video}" title="${esc(it.title)} 영상" loading="lazy" allowfullscreen></iframe></div>` : "";
   const meta = (it.meta || []).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
   const body = `
@@ -147,4 +151,5 @@ C.studies.forEach((it, i, a) => detail("study", a, it, i, "배움"));
 <section class="sec">${sh("", "연락")}${contactBlock()}</section>`;
   write("about.html", page({ title: `소개 · ${C.name}`, p: "", current: "about.html", body }));
 }
-console.log("built");
+write("images/필요한-사진-목록.md", "# 아직 없는 사진\n\n이 이름으로 images/ 폴더에 넣고 `node tools/build.js` 하면 자동으로 들어갑니다.\n\n" + [...MISSING].sort().map((m) => "- " + m).join("\n") + "\n");
+console.log("built, missing:", MISSING.size);
