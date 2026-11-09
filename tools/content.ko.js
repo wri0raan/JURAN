@@ -31,7 +31,7 @@ module.exports = {
     },
     {
       slug: "animatronics", title: "외부 자력으로 움직이는 촉수 애니메트로닉스", year: "2022", badge: "KCGS 우수발표상 · 논문지 게재",
-      links: [["논문 보기 (KCGS 논문지)", "https://doi.org/10.15701/kcgs.2023.29.5.1"]],
+      links: [["논문 보기 (KCGS 논문지)", "https://journal.cg-korea.org/archive/view_article?pid=jkcgs-29-5-1"], ["KCGS 2022 발표 논문 (DBpia)", "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11135599"]],
       img: "animatronics.png", tags: ["PID 제어", "전자석", "소프트 로보틱스", "시뮬레이션"],
       summary: "모터를 넣지 않고 바깥의 전자석 힘만으로 가늘고 유연한 촉수형 구조를 생물처럼 움직이게 만든 연구입니다.",
       body: [
@@ -54,7 +54,7 @@ module.exports = {
     },
     {
       slug: "xr-cafe", title: "XR 테이크아웃 카페", year: "2024", badge: "HCI 창의상 우수상 · 제1저자",
-      links: [["논문 보기 (DBpia)", "https://www.dbpia.co.kr/pdf/pdfView.do?nodeId=NODE11714831"], ["연구실 프로젝트 페이지", "https://cg.catholic.ac.kr/~mgchoi/publications/XRCafe/"]],
+      links: [["논문 보기 (DBpia)", "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11714831"], ["연구실 프로젝트 페이지", "https://cg.catholic.ac.kr/~mgchoi/publications/XRCafe/"]],
       video: "6iUguU-ZDzA",
       img: "xrcafe.png", tags: ["XR", "생성형 AI", "음성 인터랙션", "피지컬 피드백"],
       summary: "가상 카페의 AI 점원에게 말로 주문하면, 실제 커피머신에서 진짜 커피가 나오는 대화형 XR 공간입니다.",
@@ -109,7 +109,7 @@ module.exports = {
       body: [
         "그래픽스 모델을 학습 가능한 구조로 다루는 두 가지 실험입니다. 실험 설계, 모델 구현, 하이퍼파라미터 튜닝, 결과 분석을 직접 했습니다.",
         "<b>메쉬 피팅 (PyTorch3D)</b> · 구 메쉬를 고양이와 거미 형태로 변형했습니다. Chamfer, edge, normal, Laplacian 손실을 조합하고, Laplacian 방식(uniform · cot · cotcurv)과 옵티마이저(Adam · Momentum)를 비교했습니다. Uniform Laplacian이 cotangent보다 형태를 안정적으로 유지했고, 고양이 모델에서는 Momentum이 Adam보다 형상 왜곡이 적었습니다. 두 단계로 하이퍼파라미터를 탐색해 w_chamfer 3.0, w_edge 0.5를 골랐습니다.",
-        "<b>DQN 강화학습 (Gymnasium LunarLander)</b> · DQN을 직접 구현하고 경험 리플레이와 타깃 네트워크로 학습을 안정시켰습니다. ε-decay, 학습률, 할인율을 조정하며 착륙 행동을 학습시켰고, 수직 하강용 엔진을 추가하는 아이디어도 제안했습니다.",
+        "<b>DQN 강화학습 (Gymnasium LunarLander)</b> · DQN을 직접 구현하고 경험 리플레이와 타깃 네트워크로 학습을 안정시켰습니다. ε-decay, 학습률, 할인율을 조정하며 착륙 행동을 학습시켰습니다. 최종 설정은 epsilon 0.1, 은닉층 [70, 130], gamma 0.95, eps_decay 0.95, 280 에피소드, 학습률 0.009였고, 수직 하강용 엔진을 추가하는 아이디어도 제안했습니다.",
         "실험을 바꾸고, 기다리고, 고치는 과정 자체가 재미있다는 걸 이때 처음 알았습니다.",
       ],
       meta: [["기간", "2023.09 – 2023.12"], ["수업", "컴퓨터그래픽스와 딥러닝"], ["도구", "PyTorch3D · Gymnasium"]],
@@ -194,14 +194,15 @@ module.exports = {
       ],
       meta: [["기간", "2022.12"], ["장소", "대구"], ["역할", "학회 운영 · 참가자 지원"]] },
     { slug: "lul", year: "2024", name: "게임 개발 팀 LUL(Level Up Labs) 창립", role: "창립 · 팀 리드", img: "sangun.jpg", link: "projects/sangun.html" },
-    { slug: "gdgoc", year: "2024", name: "GDGoC · CookieDough 팀 리더", role: "Unity 스터디 리드", img: "gdgoc.jpg", gallery: ["gdgoc-1.jpg", "gdgoc-2.jpg"],
-      summary: "구글 개발자 학생 커뮤니티 GDGoC에서 Unity 개발팀 ‘CookieDough’를 이끌었습니다.",
+    { slug: "gdgoc", year: "2024 – 2026", name: "GDGoC · 팀 리더 (CookieDough · Devel)", role: "팀 리더 2회", img: "gdgoc.jpg", gallery: ["gdgoc-1.jpg", "gdgoc-2.jpg"],
+      summary: "구글 개발자 학생 커뮤니티 GDGoC에서 Unity 개발팀 ‘CookieDough’를 이끌었고, 이후 Devel 팀 리더까지 맡았습니다.",
       body: [
         "Google Developer Groups on Campus(GDGoC)에서 Unity 중심 개발팀 ‘CookieDough’의 팀 리더를 맡았습니다.",
         "한 학기 동안 Unity 스터디를 직접 기획하고 운영하며 기초 개념부터 실습, 프로젝트 제작까지 단계별 커리큘럼을 짰습니다. 매주 학습 인증과 진행 상황을 공유해 팀원들이 끝까지 참여하도록 했고, 함께 2D·3D 미니게임을 만들었습니다.",
-        "활동을 인정받아 다음 기수 운영진 제안을 받았습니다. 혼자 공부하던 습관에서 벗어나, 함께 배우며 성장하는 즐거움을 알게 된 경험입니다.",
+        "활동을 인정받아 운영진 제안을 받았고, 2025년 하반기부터 2026년 상반기까지 Devel 팀의 팀 리더로 활동했습니다.",
+        "혼자 공부하던 습관에서 벗어나, 함께 배우며 성장하는 즐거움을 알게 된 경험입니다.",
       ],
-      meta: [["기간", "2024.03 – 2024.09"], ["역할", "CookieDough 팀 리더"]] },
+      meta: [["CookieDough 팀 리더", "2024.03 – 2024.09"], ["Devel 팀 리더", "2025 하반기 – 2026 상반기"]] },
   ],
 
   about: {
@@ -218,12 +219,17 @@ module.exports = {
       ["2025.08 – 2025.12", "스윙크", "개발팀 학부 인턴 · AI 트래킹, AI 학습 게임, 박물관·전시 프로그램"],
       ["2022.07 – 현재", "가톨릭대 CUCG Lab", "학부연구생 · AI 그래픽스, XR, 시뮬레이션"],
     ],
+    pubs: [
+      ["2024", "XR 테이크아웃 카페", "김주란, 나경민, 소병욱, 윤선민, 이시후, 최명걸 · HCI Korea 2024 · 창의상 우수상", "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11714831"],
+      ["2023", "외부 자력을 이용한 촉수 생명체 애니매트로닉스 시뮬레이션", "김예영, 김도희, 김주란, 오나현, 최명걸 · 한국컴퓨터그래픽스학회 논문지 29(5), 1–9", "https://journal.cg-korea.org/archive/view_article?pid=jkcgs-29-5-1"],
+      ["2022", "자력 제어를 이용한 관절 운동 구현", "오나현, 김도희, 김예영, 김주란, 최명걸 · KCGS 2022 · 우수발표상", "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11135599"],
+      ["2017", "남원지역에 분포하는 쥐라기 심성암류에 관한 modal 분석", "김주란, 이주연, 김정빈 · 대한지질학회 추계지질과학연합학술대회 (중학생 때)", "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07263637"],
+    ],
     awards: [
-      ["2025", "KCGS 포스터·부스 발표 — 군중 시뮬레이션"],
-      ["2023", "한국컴퓨터그래픽스학회 논문지 29권 5호 게재 (공저자) — 촉수 애니메트로닉스"],
-      ["2022", "KCGS 우수발표상 — 외부 자력 촉수 애니메트로닉스"],
-      ["2024", "HCI Korea 창의상 우수상 (제1저자) — XR 테이크아웃 카페"],
+      ["2024", "HCI Korea 창의상 우수상 — XR 테이크아웃 카페 (제1저자)"],
+      ["2022", "KCGS 우수발표상 — 자력 제어를 이용한 관절 운동 구현"],
       ["2022 · 2024", "SIGGRAPH Asia 학생 봉사자 선발"],
+      ["2017", "대한지질학회 발표 수상 (중학생 때)"],
     ],
     skills: [
       ["언어", "C++ · C# · Python"],
@@ -231,7 +237,7 @@ module.exports = {
       ["비전·AI", "PyTorch · PyTorch3D · MediaPipe · Gymnasium(DQN)"],
       ["XR", "XR 콘텐츠 개발"],
     ],
-    early: "초등학생 때 교육청 영재원에서 LED 큐브와 비접촉 센서 피아노를 만들었고, 중학생 때는 지구과학 영재원에서 논문과 포스터로 지질학회 상을 받았습니다. 무언가를 직접 만들어 보는 버릇은 그때부터였습니다.",
+    early: "초등학생 때 교육청 영재원에서 LED 큐브와 비접촉 센서 피아노를 만들었고, 중학생 때는 지구과학 영재원에서 남원 지역 암석을 분석한 연구를 1저자로 대한지질학회에서 발표해 상을 받았습니다. 무언가를 직접 만들어 보는 버릇은 그때부터였습니다.",
   },
 
   // 공학 밖에서 배운 것 — 사진은 images/study/ 에 넣으면 됨

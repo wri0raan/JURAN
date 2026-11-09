@@ -145,7 +145,8 @@ C.studies.forEach((it, i, a) => detail("study", a, it, i, "배움"));
 </div></section>
 <section class="sec">${sh("", "경력")}${tl(A.experience)}</section>
 <section class="sec">${sh("", "학력")}${tl(A.education.map(([a, b]) => ["", a, b]))}</section>
-<section class="sec">${sh("", "수상 · 발표")}${tl(A.awards.map(([y, t]) => [y, t]))}</section>
+<section class="sec">${sh("", "논문 · 발표")}<div class="tl">${A.pubs.map(([y, ti, au, u]) => `<span class="y">${esc(y)}</span><div><a href="${esc(u)}" target="_blank" rel="noopener"><b>${esc(ti)}</b> <span style="color:var(--acc)">↗</span></a><br><span>${esc(au).replace("김주란", "<u>김주란</u>")}</span></div>`).join("")}</div></section>
+<section class="sec">${sh("", "수상")}${tl(A.awards.map(([y, t]) => [y, t]))}</section>
 <section class="sec">${sh("", "기술")}${tl(A.skills.map(([k, v]) => [k, v]))}</section>
 <section class="sec">${sh("", "공학 밖에서 배운 것", "studies.html")}<div class="studies">${C.studies.map((s) => studyCell(s, "")).join("")}</div></section>
 <section class="sec">${sh("", "연락")}${contactBlock()}</section>`;
