@@ -27,7 +27,7 @@ module.exports = {
     ["수상", "KCGS · HCI Korea"],
     ["전시", "국립중앙박물관 · 국립과천과학관"],
   ],
-  email: "",    // 공개할 이메일
+  email: "juranisworking@gmail.com",    // 공개할 이메일
   phone: "",    // 전화번호 (예: 010-0000-0000)
   linkedin: "", // LinkedIn 주소 (예: https://www.linkedin.com/in/아이디)
   github: "wri0raan",
