@@ -337,9 +337,9 @@ module.exports = {
       summary: "손으로 직접 그린 그림 작업.",
       body: ["손으로 직접 그린 아크릴 그림 작업입니다. 색과 질감을 손으로 다루는 감각은 화면 속 재질을 볼 때도 이어집니다."],
       why: "" },
-    { slug: "maya", title: "Maya 3D 그래픽스", en: "Maya", img: "study/maya-1.jpg",
+    { slug: "maya", title: "Maya 및 Houdini", en: "Maya & Houdini", img: "study/maya-1.jpg",
       summary: "모델링, 셰이딩, 스크립팅, 이펙트, 렌더링 파이프라인.",
-      body: ["Autodesk Maya로 모델링, 셰이딩, 스크립팅, 특수효과, 렌더링까지 3D 제작 과정 전체를 실습했습니다. 대표 작업은 메롱해치 모델링입니다."],
+      body: ["Autodesk Maya로 모델링, 셰이딩, 스크립팅, 특수효과, 렌더링까지 3D 제작 과정 전체를 실습했습니다. 대표 작업은 메롱해치 모델링입니다.", "Houdini로는 노드 기반 프로시저럴 작업과 시뮬레이션의 기초를 다뤘습니다."],
       why: "", link: "projects/hatch.html" },
   ],
 };
