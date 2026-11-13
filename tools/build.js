@@ -59,6 +59,7 @@ const studyCell = (s, p) => `<a href="${p}study/${s.slug}.html"><span class="en"
 
 const sh = (n, title, more, sub) => `<div class="sh">${n ? `<span class="n">${n}</span>` : ""}<h2>${title}</h2>${sub ? `<p>${sub}</p>` : ""}${more ? `<a class="more" href="${more}">전체 보기 →</a>` : ""}</div>`;
 
+const ver = (rel) => { try { return require("crypto").createHash("md5").update(fs.readFileSync(path.join(ROOT, rel))).digest("hex").slice(0, 8); } catch (e) { return "0"; } };
 function contactBlock() {
   const items = [];
   if (C.email) items.push(`<a href="mailto:${esc(C.email)}"><small>이메일</small>${esc(C.email)}</a>`);
@@ -66,7 +67,7 @@ function contactBlock() {
   if (C.phone) items.push(`<a href="tel:${esc(C.phone.replace(/[^0-9+]/g, ""))}"><small>전화</small>${esc(C.phone)}</a>`);
   if (C.linkedin) items.push(`<a href="${esc(C.linkedin)}" target="_blank" rel="noopener"><small>LinkedIn</small>${esc(C.linkedin.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>`);
   const ph = arguments[0] || "";
-  return `<div class="contact-wrap"><figure class="contact-ph"><img src="${ph}images/contact.jpg" alt="${esc(C.name)}와 반려견 레오" loading="lazy"></figure><div><p class="contact-note">연구·협업·인턴 제안 모두 환영합니다.</p><div class="contact">${items.join("")}</div></div></div>`;
+  return `<div class="contact-wrap"><div><p class="contact-note">연구·협업·인턴 제안 모두 환영합니다.</p><div class="contact">${items.join("")}</div></div><figure class="contact-ph"><img src="${ph}images/contact.jpg?v=${ver("images/contact.jpg")}" alt="${esc(C.name)}와 반려견 레오" loading="lazy"></figure></div>`;
 }
 
 function write(rel, html) {
@@ -147,7 +148,7 @@ C.studies.forEach((it, i, a) => detail("study", a, it, i, "배움"));
 <div class="dhead"><p class="kick">ABOUT</p><h1>소개</h1></div>
 <section class="sec"><div class="dbody" style="padding:0">
   <div class="prose"><p class="about-lead">${esc(A.lead)}</p>${A.story.map((s) => `<p>${esc(s)}</p>`).join("")}<p style="color:var(--mute);font-size:15px">${esc(A.early)}</p></div>
-  <div><figure class="profile" data-profile><img src="images/profile.jpg" alt="${esc(C.name)} 프로필 사진" onerror="this.outerHTML='<div class=&quot;ph&quot;><span>프로필 사진</span></div>'"></figure>
+  <div><figure class="profile" data-profile><img src="images/profile.jpg?v=${ver("images/profile.jpg")}" alt="${esc(C.name)} 프로필 사진" onerror="this.outerHTML='<div class=&quot;ph&quot;><span>프로필 사진</span></div>'"></figure>
   <dl class="meta"><dt>관심 분야</dt>${A.interests.map((x) => `<dd>${esc(x)}</dd>`).join("")}</dl></div>
 </div></section>
 <section class="sec">${sh("", "경력")}${tl(A.experience)}</section>
