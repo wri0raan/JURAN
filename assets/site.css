@@ -219,6 +219,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 /* 연락: 사진 + 링크 */
 .contact-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:40px;align-items:center}
 .contact-ph{margin:0}.contact-ph img{width:100%;height:auto;display:block;border-radius:4px}
-.contact-note{color:var(--mute);margin:0 0 22px;font-size:15px}
+.contact-note{grid-column:1/-1;color:var(--mute);margin:8px 0 0;font-size:15px}
 .contact-wrap .contact{flex-direction:column;gap:22px}
-@media (max-width:900px){.contact-wrap{grid-template-columns:1fr;gap:32px}.contact-note{margin-bottom:18px}}
+@media (max-width:900px){.contact-wrap{grid-template-columns:1fr;gap:40px 0}.contact-note{margin-top:-16px}}

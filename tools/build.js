@@ -28,7 +28,7 @@ function page({ title, desc, p, current, body }) {
 <link rel="icon" href="${p}favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="${p}assets/site.css">
+<link rel="stylesheet" href="${p}assets/site.css?v=${ver("assets/site.css")}">
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -40,7 +40,7 @@ function page({ title, desc, p, current, body }) {
 ${body}
 </main>
 <footer><div class="wrap"><span>© ${new Date().getFullYear()} ${esc(C.name)} ${esc(C.nameEn)}</span><a href="https://github.com/${C.github}">github.com/${C.github}</a></div></footer>
-<script src="${p}assets/site.js"></script>
+<script src="${p}assets/site.js?v=${ver("assets/site.js")}"></script>
 </body>
 </html>
 `;
@@ -67,7 +67,7 @@ function contactBlock() {
   if (C.phone) items.push(`<a href="tel:${esc(C.phone.replace(/[^0-9+]/g, ""))}"><small>전화</small>${esc(C.phone)}</a>`);
   if (C.linkedin) items.push(`<a href="${esc(C.linkedin)}" target="_blank" rel="noopener"><small>LinkedIn</small>${esc(C.linkedin.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>`);
   const ph = arguments[0] || "";
-  return `<div class="contact-wrap"><div><p class="contact-note">연구·협업·인턴 제안 모두 환영합니다.</p><div class="contact">${items.join("")}</div></div><figure class="contact-ph"><img src="${ph}images/contact.jpg?v=${ver("images/contact.jpg")}" alt="${esc(C.name)}와 반려견 레오" loading="lazy"></figure></div>`;
+  return `<div class="contact-wrap"><div><div class="contact">${items.join("")}</div></div><figure class="contact-ph"><img src="${ph}images/contact.jpg?v=${ver("images/contact.jpg")}" alt="${esc(C.name)}와 반려견 레오" loading="lazy"></figure><p class="contact-note">연구·협업·인턴 제안 모두 환영합니다.</p></div>`;
 }
 
 function write(rel, html) {
