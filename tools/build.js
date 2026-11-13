@@ -65,7 +65,8 @@ function contactBlock() {
   items.push(`<a href="https://github.com/${C.github}" rel="noopener"><small>GitHub</small>@${C.github}</a>`);
   if (C.phone) items.push(`<a href="tel:${esc(C.phone.replace(/[^0-9+]/g, ""))}"><small>전화</small>${esc(C.phone)}</a>`);
   if (C.linkedin) items.push(`<a href="${esc(C.linkedin)}" target="_blank" rel="noopener"><small>LinkedIn</small>${esc(C.linkedin.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>`);
-  return `<div class="contact">${items.join("")}</div>`;
+  const ph = arguments[0] || "";
+  return `<div class="contact-wrap"><figure class="contact-ph"><img src="${ph}images/contact.jpg" alt="${esc(C.name)}와 반려견 레오" loading="lazy"></figure><div><p class="contact-note">연구·협업·인턴 제안 모두 환영합니다.</p><div class="contact">${items.join("")}</div></div></div>`;
 }
 
 function write(rel, html) {
@@ -97,7 +98,7 @@ function write(rel, html) {
   <div class="list">${C.activities.map((x) => actRow(x, p)).join("")}</div></section>
 <section class="sec" id="studies">${sh("04", "배움", "studies.html", "공학 밖에서 배운 것들")}
   <div class="studies">${C.studies.map((s) => studyCell(s, p)).join("")}</div></section>
-<section class="sec" id="contact">${sh("05", "연락")}${contactBlock()}</section>`;
+<section class="sec" id="contact">${sh("05", "연락")}${contactBlock(p)}</section>`;
   write("index.html", page({ title: `${C.name} · ${C.nameEn}`, p, current: "", body }));
 }
 
@@ -155,7 +156,7 @@ C.studies.forEach((it, i, a) => detail("study", a, it, i, "배움"));
 <section class="sec">${sh("", "수상")}${tl(A.awards.map(([y, t]) => [y, t]))}</section>
 <section class="sec">${sh("", "기술")}${tl(A.skills.map(([k, v]) => [k, v]))}</section>
 <section class="sec">${sh("", "공학 밖에서 배운 것", "studies.html")}<div class="studies">${C.studies.map((s) => studyCell(s, "")).join("")}</div></section>
-<section class="sec">${sh("", "연락")}${contactBlock()}</section>`;
+<section class="sec">${sh("", "연락")}${contactBlock("")}</section>`;
   write("about.html", page({ title: `소개 · ${C.name}`, p: "", current: "about.html", body }));
 }
 write("images/필요한-사진-목록.md", "# 아직 없는 사진\n\n이 이름으로 images/ 폴더에 넣고 `node tools/build.js` 하면 자동으로 들어갑니다.\n\n" + [...MISSING].sort().map((m) => "- " + m).join("\n") + "\n");

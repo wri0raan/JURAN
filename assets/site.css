@@ -208,10 +208,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .lb button{position:absolute;background:none;border:0;color:#fff;font-size:34px;cursor:pointer;padding:12px 18px;font-family:var(--sans)}
 .lb .x{top:8px;right:8px}.lb .pv{left:4px;top:50%;transform:translateY(-50%)}.lb .nx{right:4px;top:50%;transform:translateY(-50%)}
 .profile{margin-bottom:28px}
-.profile img,.profile .ph{width:100%;aspect-ratio:4/5;object-fit:cover}
+.profile img{width:100%;height:auto;display:block}.profile .ph{width:100%;aspect-ratio:4/5}
 /* 편집 모드 */
 .ed-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:40;background:var(--ink);color:var(--bg);padding:10px 14px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:13px;max-width:760px;margin:0 auto}
 .ed-bar input{flex:1;min-width:180px;padding:6px 8px;border:0;font:inherit}
 .ed-bar button,.ed-add{font:inherit;font-size:13px;padding:7px 12px;border:1px solid currentColor;background:none;color:inherit;cursor:pointer}
 .ed-add{color:var(--acc);border-color:var(--acc);margin:0 0 16px;font-weight:600}
 .ed-status{font-size:13px;color:var(--mute);margin:-6px 0 14px}
+
+/* 연락: 사진 + 링크 */
+.contact-wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:40px;align-items:center}
+.contact-ph{margin:0}.contact-ph img{width:100%;height:auto;display:block;border-radius:4px}
+.contact-note{color:var(--mute);margin:0 0 22px;font-size:15px}
+.contact-wrap .contact{flex-direction:column;gap:22px}
+@media (max-width:900px){.contact-wrap{grid-template-columns:1fr;gap:24px}}
