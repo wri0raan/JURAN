@@ -333,7 +333,7 @@ const W = 20, D = 28, T = 1.5, BEV = 0.25;
 const tablet = new THREE.Group();
 scene.add(tablet);
 
-const bodyMat = new THREE.MeshPhysicalMaterial({ color: SWATCHES[0].body, roughness: 0.42, clearcoat: 0.55, clearcoatRoughness: 0.3 });
+const bodyMat = new THREE.MeshPhysicalMaterial({ color: SWATCHES[0].body, roughness: 0.42, clearcoat: 0.55, clearcoatRoughness: 0.3, envMapIntensity: 0.55 });
 const bodyGeo = new THREE.ExtrudeGeometry(rrShape(W - 2 * BEV, D - 2 * BEV, 2.2), {
   depth: T - 2 * BEV, bevelEnabled: true, bevelThickness: BEV, bevelSize: BEV, bevelSegments: 6, curveSegments: 32,
 });
@@ -348,16 +348,17 @@ const gx0 = -gridW / 2, gz0 = PANEL.z0 + (PANEL.h - gridH) / 2;
 const pinPos = (r, c, d) => [gx0 + c * CELL + (d < 3 ? 0 : DOT), gz0 + r * LINE + (d % 3) * DOT];
 
 const panelTex = canvasTex(1024, Math.round(1024 * PANEL.h / PANEL.w), (ctx, w, h) => {
-  ctx.fillStyle = '#CDD2D9'; ctx.fillRect(0, 0, w, h);
+  ctx.fillStyle = '#2C3240'; ctx.fillRect(0, 0, w, h);
   const sx = w / PANEL.w, sz = h / PANEL.h;
   for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) for (let d = 0; d < 6; d++) {
     const [x, z] = pinPos(r, c, d);
     const px = (x + PANEL.w / 2) * sx, pz = (z - PANEL.z0) * sz;
-    ctx.beginPath(); ctx.arc(px, pz, 0.13 * sx, 0, Math.PI * 2);
-    ctx.fillStyle = '#9EA5AF'; ctx.fill();
+    ctx.beginPath(); ctx.arc(px, pz, 0.12 * sx, 0, Math.PI * 2);
+    ctx.fillStyle = '#151922'; ctx.fill();
+    ctx.lineWidth = 1.5; ctx.strokeStyle = '#3E4657'; ctx.stroke();
   }
 });
-const gasket = new THREE.Mesh(flatRR(PANEL.w + 0.36, PANEL.h + 0.36, 0.75), new THREE.MeshStandardMaterial({ color: 0x23262c, roughness: 0.8 }));
+const gasket = new THREE.Mesh(flatRR(PANEL.w + 0.36, PANEL.h + 0.36, 0.75), new THREE.MeshStandardMaterial({ color: 0x8E95A1, roughness: 0.45, metalness: 0.5 }));
 gasket.position.set(0, T + 0.003, PANEL.z0 + PANEL.h / 2);
 const panel = new THREE.Mesh(flatRR(PANEL.w, PANEL.h, 0.6), new THREE.MeshStandardMaterial({ map: panelTex, roughness: 0.72 }));
 panel.position.set(0, T + 0.006, PANEL.z0 + PANEL.h / 2);
@@ -365,9 +366,9 @@ panel.receiveShadow = true;
 tablet.add(gasket, panel);
 
 // pins (instanced)
-const NPIN = ROWS * COLS * 6, RISE = 0.17;
+const NPIN = ROWS * COLS * 6, RISE = 0.2;
 const pinGeo = new THREE.CapsuleGeometry(0.1, 0.3, 4, 14);
-const pins = new THREE.InstancedMesh(pinGeo, new THREE.MeshStandardMaterial({ color: 0xF6F5F1, roughness: 0.35 }), NPIN);
+const pins = new THREE.InstancedMesh(pinGeo, new THREE.MeshStandardMaterial({ color: 0xFFFFFF, emissive: 0x4a4a44, roughness: 0.3 }), NPIN);
 pins.castShadow = true; pins.receiveShadow = true; pins.frustumCulled = false;
 const pinX = new Float32Array(NPIN), pinZ = new Float32Array(NPIN);
 const pinCur = new Float32Array(NPIN), pinTgt = new Float32Array(NPIN), pinDelay = new Float32Array(NPIN);
@@ -475,7 +476,7 @@ const proto = new THREE.Group();
 proto.visible = false;
 scene.add(proto);
 const BX = 12, BZ = 9, BH = 4.6, WALL = 0.35, BR = 1.0;
-const pla = new THREE.MeshStandardMaterial({ color: 0xBABDC3, roughness: 0.68 });
+const pla = new THREE.MeshStandardMaterial({ color: 0xA4A9B1, roughness: 0.7, envMapIntensity: 0.6 });
 const wallShape = rrShape(BX, BZ, BR); wallShape.holes.push(rr(new THREE.Path(), BX - 2 * WALL, BZ - 2 * WALL, BR - WALL));
 const wallGeo = new THREE.ExtrudeGeometry(wallShape, { depth: BH, bevelEnabled: false, curveSegments: 28 });
 wallGeo.rotateX(-Math.PI / 2);
@@ -768,10 +769,41 @@ renderer.setAnimationLoop(() => {
 });
 
 /* ---------- boot ---------- */
-controls.autoRotate = !reduceMotion;
+// Screenshot mode: ?shot=hero|left|top|detail|proto|open[&swatch=0-4][&theme=dark]
+const params = new URLSearchParams(location.search);
+const SHOTS = {
+  hero: { mode: 'concept', pos: [24, 31, 40], tgt: [0, 0, 1.2] },
+  left: { mode: 'concept', pos: [-26, 29, 39], tgt: [0, 0, 1.2] },
+  top: { mode: 'concept', pos: [0, 60, 7], tgt: [0, 0, 0.4] },
+  detail: { mode: 'concept', pos: [4.5, 6.5, -1.5], tgt: [-2.5, 1.4, -10] },
+  proto: { mode: 'proto', pos: [19, 15, 22], tgt: [0, 2.4, 0] },
+  open: { mode: 'proto', pos: [21, 19, 25], tgt: [0, 4.8, 0], explode: 1 },
+};
+const shot = SHOTS[params.get('shot')];
+if (params.get('theme') === 'dark' || params.get('theme') === 'light') document.documentElement.dataset.theme = params.get('theme');
+if (shot) {
+  document.body.classList.add('clean');
+  $('showUi').remove();
+  if (params.get('swatch')) applySwatch(+params.get('swatch') % SWATCHES.length);
+  setMode(shot.mode); fly = null;
+  camera.position.set(...shot.pos); controls.target.set(...shot.tgt);
+  if (shot.explode) { explodeTgt = explode = 1; }
+  lastMask = mask('15'); uiMask = shot.mode === 'proto' ? mask('126') : 0;
+  controls.autoRotate = false;
+  cursorBar.visible = false;
+  layout();
+  refreshDisplay(); refreshText(); refreshDots();
+  pinCur.set(pinTgt);
+  for (let i = 0; i < NPIN; i++) { dummy.position.set(pinX[i], PIN_BASE + pinCur[i] * RISE, pinZ[i]); dummy.updateMatrix(); pins.setMatrixAt(i, dummy.matrix); }
+  pins.instanceMatrix.needsUpdate = true;
+  protoPins.forEach((p) => { p.userData.cur = p.userData.tgt; });
+  blinkT = -1e9; lcdCursorOn = false;
+} else {
+  controls.autoRotate = !reduceMotion;
+  layout();
+  refreshDisplay(true); refreshText(); refreshDots();
+}
 $('spin').checked = controls.autoRotate;
-layout();
-refreshDisplay(true); refreshText(); refreshDots();
 Promise.all(['78px Jua', '500 62px "Noto Sans KR"', '500 76px "IBM Plex Mono"'].map((f) => document.fonts.load(f, '마음손길 1')))
   .catch(() => {})
   .finally(() => { allTextures.forEach((t) => t.redraw()); lcdTex.redraw(); });
