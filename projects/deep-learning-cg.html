@@ -19,7 +19,7 @@
 <main class="wrap">
 
 <a class="back" href="../projects.html">← 프로젝트 목록</a>
-<div class="dhead"><p class="kick">2023 · 컴퓨터그래픽스와 딥러닝</p><h1>메쉬 피팅 · DQN 강화학습</h1><p class="lede">구를 고양이·거미 모양으로 바꾸는 메쉬 최적화와, 달 착륙선을 DQN으로 착륙시키는 실험을 했습니다.</p></div>
+<div class="dhead"><p class="kick">2023 · 컴퓨터그래픽스와 딥러닝</p><h1>메쉬 피팅 · DQN 강화학습</h1><p class="lede">구를 고양이·거미 모양으로 바꾸는 메쉬 최적화와, 달 착륙선을 DQN으로 착륙시키는 실험을 했습니다.</p><div class="btns"><a class="btn" href="https://zurans.notion.site/dqn-lunar-lander" target="_blank" rel="noopener">DQN 실험 기록 (Notion) ↗</a></div></div>
 <figure class="dhero"><img src="../images/dlcg.gif" alt="메쉬 피팅 · DQN 강화학습" loading="lazy"></figure>
 <div class="dbody">
   <div class="prose"><p>그래픽스 모델을 학습 가능한 구조로 다루는 두 가지 실험입니다. 실험 설계, 모델 구현, 하이퍼파라미터 튜닝, 결과 분석을 직접 했습니다.</p><p><b>메쉬 피팅 (PyTorch3D)</b> · 구 메쉬를 고양이와 거미 형태로 변형했습니다. Chamfer, edge, normal, Laplacian 손실을 조합하고, Laplacian 방식(uniform · cot · cotcurv)과 옵티마이저(Adam · Momentum)를 비교했습니다. Uniform Laplacian이 cotangent보다 형태를 안정적으로 유지했고, 고양이 모델에서는 Momentum이 Adam보다 형상 왜곡이 적었습니다. 두 단계로 하이퍼파라미터를 탐색해 w_chamfer 3.0, w_edge 0.5를 골랐습니다.</p><p><b>DQN 강화학습 (Gymnasium LunarLander)</b> · DQN을 직접 구현하고 경험 리플레이와 타깃 네트워크로 학습을 안정시켰습니다. ε-decay, 학습률, 할인율을 조정하며 착륙 행동을 학습시켰습니다. 최종 설정은 epsilon 0.1, 은닉층 [70, 130], gamma 0.95, eps_decay 0.95, 280 에피소드, 학습률 0.009였고, 수직 하강용 엔진을 추가하는 아이디어도 제안했습니다.</p><p>실험을 바꾸고, 기다리고, 고치는 과정 자체가 재미있다는 걸 이때 처음 알았습니다.</p></div>

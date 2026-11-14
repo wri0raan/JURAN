@@ -94,7 +94,7 @@ function write(rel, html) {
 <section class="sec" id="research">${sh("01", "연구", "research.html")}
   <div class="grid tall">${C.research.map((r) => card(r, "research", p)).join("")}</div></section>
 <section class="sec" id="projects">${sh("02", "프로젝트", "projects.html")}
-  <div class="grid wide">${C.projects.filter((x) => x.home).slice(0, 6).map((r) => card(r, "projects", p)).join("")}</div></section>
+  <div class="grid wide">${C.projects.filter((x) => x.home).slice(0, 8).map((r) => card(r, "projects", p)).join("")}</div></section>
 <section class="sec" id="activities">${sh("03", "활동", "activities.html")}
   <div class="list">${C.activities.map((x) => actRow(x, p)).join("")}</div></section>
 <section class="sec" id="studies">${sh("04", "배움", "studies.html", "공학 밖에서 배운 것들")}
