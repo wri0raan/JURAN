@@ -91,6 +91,7 @@ button:focus-visible, input:focus-visible { outline: 2px solid var(--signal); ou
 }
 .show-ui:hover { opacity: 1; }
 body.clean .intro, body.clean .panel { display: none; }
+body.embed .intro { display: none; }
 .fail { position: fixed; inset: 0; display: grid; place-items: center; text-align: center; padding: 24px; color: var(--muted); }
 @media (max-width: 760px) {
   .intro h1 { font-size: 2rem; }
@@ -776,6 +777,7 @@ const SHOTS = {
   left: { mode: 'concept', pos: [-26, 29, 39], tgt: [0, 0, 1.2] },
   top: { mode: 'concept', pos: [0, 60, 7], tgt: [0, 0, 0.4] },
   detail: { mode: 'concept', pos: [4.5, 6.5, -1.5], tgt: [-2.5, 1.4, -10] },
+  cover: { mode: 'concept', pos: [20, 27, 34], tgt: [0, 0, 1.6] },
   proto: { mode: 'proto', pos: [19, 15, 22], tgt: [0, 2.4, 0] },
   open: { mode: 'proto', pos: [21, 19, 25], tgt: [0, 4.8, 0], explode: 1 },
 };
@@ -799,6 +801,12 @@ if (shot) {
   protoPins.forEach((p) => { p.userData.cur = p.userData.tgt; });
   blinkT = -1e9; lcdCursorOn = false;
 } else {
+  // Embedded in the portfolio page: no duplicate title, no wheel-zoom hijacking page scroll, compact on phones
+  if (params.get('embed')) {
+    document.body.classList.add('embed');
+    controls.enableZoom = false;
+    if (innerWidth <= 760) toggleClean();
+  }
   controls.autoRotate = !reduceMotion;
   layout();
   refreshDisplay(true); refreshText(); refreshDots();

@@ -155,6 +155,7 @@ module.exports = {
         "<b>내 역할</b> · 팀의 개발을 맡아 점자 입력과 도트 매트릭스·LCD 출력을 잇는 아두이노 회로와 동작 로직을 구현했고, Fusion 360으로 케이스를 설계해 3D 프린팅과 레이저 커팅으로 시제품을 직접 만들었습니다.",
       ],
       links: [["3D 목업 보기", "../mockups/maeum-songil-3d.html"]],
+      embed: { title: "3D 목업", src: "mockups/maeum-songil-3d.html?embed=1", full: "mockups/maeum-songil-3d.html", note: "드래그해서 돌려 보고, 패널에서 외형 색상과 2021 시제품을 바꿔 보거나 점자를 직접 입력해 볼 수 있어요." },
       meta: [["기간", "2021 하계 계절학기"], ["팀", "3명"], ["역할", "개발 · 외형 설계 · 시제품 제작"], ["도구", "Arduino · Fusion 360 · 3D 프린터"]],
     },
     {
