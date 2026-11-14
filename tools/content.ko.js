@@ -180,11 +180,12 @@ module.exports = {
         "<b>구성</b> · 7개 맵의 픽셀 게임으로, 피하기·싸우기·타임 어택 등 맵마다 다른 미니게임을 넣었습니다. 세 명이 Git으로 브랜치를 나눠 협업했습니다.",
       ],
       links: [["GitHub에서 보기", "https://github.com/ZERAH-0/Game1-CodeBlack"]],
+      play: { src: "https://wri0raan.github.io/Game1-CodeBlack/", aspect: "1/1", note: "게임은 C++과 SDL2로 개발했고, 그 코드는 GitHub main 브랜치에 그대로 있습니다. 이 웹 데모는 브라우저에서 바로 해볼 수 있도록 같은 로직을 JavaScript로 옮긴 것으로, 게임 설계·수치·스테이지 구성·리소스는 모두 원본 C++ 프로젝트의 것입니다. 소리가 재생됩니다.", keys: "조작 · <b>키보드</b>(방향키 · Space 등)와 <b>마우스</b> · 게임 화면을 한 번 클릭한 뒤 조작하세요" },
       meta: [["기간", "2025.03 – 2025.08"], ["역할", "메인 프로그래머 · 보스전 총괄"], ["팀", "제21개발소 · 개발 3명"], ["도구", "C++ · SDL2 · Git"]],
     },
     {
       slug: "frozen-murder", title: "Frozen Murder", year: "2023", badge: "스토리보드 · 애니매틱",
-      img: "frozen.jpg", video: "JaP8ijr2EvU", tags: ["스토리보드", "애니매틱", "연출"],
+      img: "frozen.jpg", video: "XUTP9MNHHM0", tags: ["스토리보드", "애니매틱", "연출"],
       summary: "가족 판타지 ‘겨울왕국’을 탐정 올라프가 이끄는 추리 스릴러로 바꾼 장르 전환 작업입니다.",
       body: [
         "같은 세계와 캐릭터라도 톤과 정보를 보여주는 방식만으로 서스펜스를 만들 수 있는지 실험한 장르 바꾸기 과제입니다. 관객은 탐정 올라프와 함께 단서를 따라가며 용의자를 좁혀 갑니다.",
