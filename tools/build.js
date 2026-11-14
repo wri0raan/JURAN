@@ -62,7 +62,7 @@ const studyCell = (s, p) => `<a href="${p}study/${s.slug}.html"><span class="en"
 
 const sh = (n, title, more, sub) => `<div class="sh">${n ? `<span class="n">${n}</span>` : ""}<h2>${title}</h2>${sub ? `<p>${sub}</p>` : ""}${more ? `<a class="more" href="${more}">전체 보기 →</a>` : ""}</div>`;
 
-const ver = (rel) => { try { return require("crypto").createHash("md5").update(fs.readFileSync(path.join(ROOT, rel))).digest("hex").slice(0, 8); } catch (e) { return "0"; } };
+const ver = (rel) => { try { return require("crypto").createHash("md5").update(/\.(css|js)$/.test(rel) ? fs.readFileSync(path.join(ROOT, rel), "utf8").replace(/\r\n/g, "\n") : fs.readFileSync(path.join(ROOT, rel))).digest("hex").slice(0, 8); } catch (e) { return "0"; } };
 function contactBlock() {
   const items = [];
   if (C.email) items.push(`<a href="mailto:${esc(C.email)}"><small>이메일</small>${esc(C.email)}</a>`);
