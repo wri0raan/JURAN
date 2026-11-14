@@ -172,7 +172,7 @@ module.exports = {
     },
     {
       slug: "code-black", title: "Code:Black", year: "2025", badge: "C++ · SDL2 · 3인",
-      img: "codeblack.jpg", tags: ["C++", "SDL2", "상태기계", "보스 AI"], home: true,
+      img: "codeblack-play.gif", tags: ["C++", "SDL2", "상태기계", "보스 AI"], home: true,
       summary: "상용 엔진 없이 C++와 SDL2로 렌더링부터 충돌까지 직접 만든 2D 액션 어드벤처입니다.",
       body: [
         "상용 엔진 없이 C++와 SDL2로 렌더링, 오디오, 입력, 충돌, 상태 전이까지 직접 구현한 2D 액션 어드벤처입니다. 인트로부터 7개 스테이지, 엔딩까지 이어지는 페이즈 구조이고, 6번째 스테이지의 보스전을 핵심 전투로 설계했습니다.",
@@ -180,7 +180,7 @@ module.exports = {
         "<b>구성</b> · 7개 맵의 픽셀 게임으로, 피하기·싸우기·타임 어택 등 맵마다 다른 미니게임을 넣었습니다. 세 명이 Git으로 브랜치를 나눠 협업했습니다.",
       ],
       links: [["GitHub에서 보기", "https://github.com/ZERAH-0/Game1-CodeBlack"]],
-      play: { src: "https://wri0raan.github.io/Game1-CodeBlack/", aspect: "1/1", note: "게임은 C++과 SDL2로 개발했고, 그 코드는 GitHub main 브랜치에 그대로 있습니다. 이 웹 데모는 브라우저에서 바로 해볼 수 있도록 같은 로직을 JavaScript로 옮긴 것으로, 게임 설계·수치·스테이지 구성·리소스는 모두 원본 C++ 프로젝트의 것입니다. 소리가 재생됩니다.", keys: "조작 · <b>키보드</b>(방향키 · Space 등)와 <b>마우스</b> · 게임 화면을 한 번 클릭한 뒤 조작하세요" },
+      play: { src: "https://wri0raan.github.io/Game1-CodeBlack/", aspect: "1/1", note: "게임은 C++과 SDL2로 개발했고, 그 코드는 GitHub main 브랜치에 그대로 있습니다. 이 웹 데모는 브라우저에서 바로 해볼 수 있도록 같은 로직을 JavaScript로 옮긴 것으로, 게임 설계·수치·스테이지 구성·리소스는 모두 원본 C++ 프로젝트의 것입니다. 소리가 재생됩니다.", keys: "조작 · <b>방향키</b> 이동 · <b>X</b> 달리기 · <b>Space</b> 공격 · <b>A</b> 미니맵 · <b>S</b> 조작법 다시 보기 · 메뉴는 <b>마우스</b> · 게임 화면을 한 번 클릭한 뒤 조작하세요" },
       meta: [["기간", "2025.03 – 2025.08"], ["역할", "메인 프로그래머 · 보스전 총괄"], ["팀", "제21개발소 · 개발 3명"], ["도구", "C++ · SDL2 · Git"]],
     },
     {
