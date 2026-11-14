@@ -35,7 +35,7 @@ module.exports = {
   research: [
     {
       slug: "gait", title: "단안 영상 기반 반려견 보행 분석", year: "2026 – 진행 중", badge: "졸업논문",
-      img: "gait.jpg", tags: ["컴퓨터비전", "3D 자세 복원", "생체역학"],
+      img: "gallery/research-gait/03-f03.jpg", tags: ["컴퓨터비전", "3D 자세 복원", "생체역학"],
       summary: "휴대폰으로 찍은 걷는 영상 하나로 3D 자세를 복원하고, 보행 주기를 뽑아 파행(절뚝거림)을 판별합니다.",
       body: [
         "반려견이 걷는 단안 영상에서 SMAL·BARC 계열 모델로 3D 자세를 복원하고, 보행 주기를 추출해 파행을 판별하는 파이프라인을 만들고 있습니다.",
@@ -89,7 +89,7 @@ module.exports = {
   projects: [
     {
       slug: "acupoint", title: "AI 실시간 트래킹 프로젝트", year: "2025", badge: "박물관 전시",
-      img: "acupoint.jpg", tags: ["Unity", "MediaPipe", "트래킹", "전시"], home: true,
+      img: "gallery/projects-acupoint/p087.jpg", tags: ["Unity", "MediaPipe", "트래킹", "전시"], home: true,
       summary: "몸을 실시간으로 추적하는 트래킹 기술로 한방 침자리 체험과 미니게임들을 만들었고, 국립중앙박물관과 국립과천과학관 전시까지 이어졌습니다.",
       body: [
         "스윙크 개발팀 인턴으로 일하며 Unity와 MediaPipe 포즈 추정을 바탕으로 한 트래킹 콘텐츠를 만들었습니다. 관람객의 몸을 실시간으로 추적해 그 위에 정보를 보여주거나, 몸을 움직여 플레이하는 방식입니다.",
@@ -195,7 +195,7 @@ module.exports = {
     },
     {
       slug: "song-for-my-dog", title: "Song for My Dog", year: "2025", badge: "모션그래픽 · After Effects",
-      img: "song-for-my-dog.jpg", tags: ["After Effects", "모션그래픽", "생성 모델", "캐릭터 애니메이션"], home: false,
+      img: "gallery/projects-song-for-my-dog/s05.jpg", tags: ["After Effects", "모션그래픽", "생성 모델", "캐릭터 애니메이션"], home: false,
       summary: "반려견 레오를 주인공으로 한 1분짜리 세로형 모션그래픽 숏폼입니다. 직접 그린 레오 일러스트를 생성 모델에 학습시켜 장면별 포즈를 만들었습니다.",
       body: [
         "‘사랑’을 주제로, 말보다 진심이 먼저 전해지는 반려동물과의 사랑을 레오와의 일상으로 담았습니다. 인터랙티브프로젝트실습의 최종 과제이자, 레오의 일상을 나누는 채널의 인트로·화면 전환에 쓰려고 만든 캐릭터 애니메이션입니다.",
@@ -233,7 +233,7 @@ module.exports = {
         "일본, 한국, 미국, 캐나다, 독일, 뉴질랜드에서 온 봉사자들과 함께 일하며, 다름을 이해하고 연결하는 능력이 기술만큼 중요하다는 걸 배웠습니다.",
       ],
       meta: [["기간", "2024.12"], ["장소", "일본 도쿄"], ["역할", "전시 · 등록 · 체험 부스 지원"]] },
-    { slug: "siggraph-2022", year: "2022", name: "SIGGRAPH Asia 2022 대구 · 학생 자원봉사자(SV) 선발", role: "학회 운영 · 참가자 지원", img: "siggraph-2022.jpg",
+    { slug: "siggraph-2022", year: "2022", name: "SIGGRAPH Asia 2022 대구 · 학생 자원봉사자(SV) 선발", role: "학회 운영 · 참가자 지원", img: "gallery/activities-siggraph-2022/ic221.jpg",
       gallery: ["siggraph-2022-1.jpg", "siggraph-2022-2.jpg", "siggraph-2022-3.jpg", "siggraph-2022-4.jpg"],
       summary: "대구에서 열린 SIGGRAPH Asia 2022에서 처음 학회의 뒤편을 경험했고, ‘다음엔 발표자로 서겠다’는 목표가 생겼습니다.",
       body: [
@@ -243,7 +243,7 @@ module.exports = {
         "이 경험으로 ‘다음엔 관객이 아니라 발표자로 무대에 서겠다’는 목표를 세웠습니다.",
       ],
       meta: [["기간", "2022.12"], ["장소", "대구"], ["역할", "학회 운영 · 참가자 지원"]] },
-    { slug: "gstar-2024", year: "2024", name: "G-STAR 2024 학과 탐방대", role: "탐방대", img: "gstar.jpg",
+    { slug: "gstar-2024", year: "2024", name: "G-STAR 2024 학과 탐방대", role: "탐방대", img: "gallery/activities-gstar-2024/p160.jpg",
       summary: "학과 탐방대로 선발되어 부산 벡스코에서 열린 G-STAR 2024에 다녀왔습니다.",
       body: ["학과 탐방대로 선발되어 2024년 11월 14일부터 16일까지 부산 벡스코에서 열린 국제 게임 전시회 G-STAR 2024를 탐방했습니다. 넥슨, 크래프톤 등 게임사 부스를 돌며 신작 시연과 전시 연출을 직접 보고, 게임 그래픽과 인터랙션이 실제 관객 앞에서 어떻게 구현되는지 살폈습니다."],
       meta: [["기간", "2024.11.14 – 11.16"], ["장소", "부산 벡스코"], ["구분", "학과 탐방대 선발"]] },
@@ -276,7 +276,7 @@ module.exports = {
         "직접 한국 노래를 불러주면서 가사의 뜻을 알려주고, 참여자들과 함께 따라 부르는 노래 수업을 기획하고 진행했습니다. 문화를 설명으로만 전하는 것이 아니라, 소리와 경험으로 직접 느끼게 하는 방식이었습니다.",
       ],
       meta: [["기간", "2021.07.03 – 07.17"], ["역할", "한국 문화 크리에이터 · 노래 수업"], ["결과", "KOREA FESTA 2021 수료"]] },
-    { slug: "statist", year: "2021 – 2022", name: "스타티스트(STARTIST) · 창업대학 기관동아리 부회장", role: "부회장 · 홍보 영상", img: "statist.jpg",
+    { slug: "statist", year: "2021 – 2022", name: "스타티스트(STARTIST) · 창업대학 기관동아리 부회장", role: "부회장 · 홍보 영상", img: "gallery/activities-statist/00-logo.jpg",
       summary: "가톨릭대 창업대학 기관동아리 스타티스트에서 세 학기 동안 활동하며 스타트업 융복합전공 홍보 영상을 만들었습니다.",
       body: [
         "가톨릭대학교 창업대학의 기관동아리 스타티스트(STARTIST)에서 2021년 1학기부터 2022년 1학기까지 부회장으로 활동했습니다.",
@@ -289,7 +289,7 @@ module.exports = {
       summary: "2022년 1월, NVIDIA 딥러닝 교육 과정에 참여했습니다.",
       body: ["2022년 1월 5일부터 6일까지 NVIDIA 딥러닝 교육 과정에 참여해 딥러닝의 기초를 실습으로 배웠습니다. 이후 컴퓨터그래픽스와 딥러닝 수업, 그리고 지금의 비전 연구로 이어진 출발점입니다."],
       meta: [["기간", "2022.01.05 – 01.06"], ["주관", "NVIDIA"]] },
-    { slug: "gdgoc", year: "2025 – 2026", name: "GDGoC · 팀 리더 (반죽뭉치 · DevRel)", role: "팀 리더 2회", img: "gdgoc.jpg", gallery: ["gdgoc-1.jpg", "gdgoc-2.jpg"],
+    { slug: "gdgoc", year: "2025 – 2026", name: "GDGoC · 팀 리더 (반죽뭉치 · DevRel)", role: "팀 리더 2회", img: "gallery/activities-gdgoc/p453.jpg", gallery: ["gdgoc-1.jpg", "gdgoc-2.jpg"],
       summary: "구글 개발자 학생 커뮤니티 GDGoC에서 Unity 스터디팀 ‘반죽뭉치’를 이끌었고, 이듬해 6기에서는 행사 기획과 부스 운영을 맡는 DevRel 팀의 리더가 됐습니다.",
       body: [
         "Google Developer Groups on Campus CUK(GDGoC)에서 두 해 연속 팀 리더를 맡았습니다.",
@@ -350,7 +350,7 @@ module.exports = {
 
   // 공학 밖에서 배운 것 — 사진은 images/study/ 에 넣으면 됨
   studies: [
-    { slug: "color", title: "색채학", en: "Color Science", img: "study/color-1.jpg",
+    { slug: "color", title: "색채학", en: "Color Science", img: "gallery/study-color/p204.jpg",
       summary: "색의 기본 성질부터 색 체계, 퍼스널 컬러, 트렌드 컬러 기획까지.",
       body: ["색은 물체를 볼 때 가장 먼저 느끼는 요소입니다. 색의 기본 성질과 색 체계, 배색 원리, 퍼스널 컬러, 트렌드 컬러 기획을 배우고, 여러 실습으로 색을 이해하고 쓰는 감각을 길렀습니다. 실습물로 Dolce&Gabbana 2022 포스터를 만들었습니다."],
       why: "렌더링에서 색이 어떻게 보이는지 판단할 때 지금도 쓰는 감각입니다." },
@@ -375,11 +375,11 @@ module.exports = {
       summary: "손으로 직접 그린 그림 작업.",
       body: ["손으로 직접 그린 아크릴 그림 작업입니다. 색과 질감을 손으로 다루는 감각은 화면 속 재질을 볼 때도 이어집니다."],
       why: "" },
-    { slug: "maya", title: "Maya 및 Houdini", en: "Maya & Houdini", img: "study/maya-1.jpg",
+    { slug: "maya", title: "Maya 및 Houdini", en: "Maya & Houdini", img: "gallery/study-maya/ic518.jpg",
       summary: "모델링, 셰이딩, 스크립팅, 이펙트, 렌더링 파이프라인.",
       body: ["Autodesk Maya로 모델링, 셰이딩, 스크립팅, 특수효과, 렌더링까지 3D 제작 과정 전체를 실습했습니다.", "<b>메롱해치 (2023)</b> · 안예은의 노래 ‘메롱 해치’ 뮤직비디오를 위한 주인공 해치를 Maya로 모델링했습니다. 정면·측면·후면 자료를 모은 뒤 얼굴 한쪽을 만들어 대칭 복사하고, 이빨과 혀, 몸통과 다리, 꼬리, 무늬 디테일 순서로 쌓아 렌더링까지 마쳤습니다.", "Houdini로는 노드 기반 프로시저럴 모델링과 시뮬레이션의 기초를 다뤘고, 테이블과 의자 세트를 노드로 만들어 렌더링했습니다."],
       why: "" },
-    { slug: "unreal", title: "Unreal 및 Unity", en: "Unreal & Unity", img: "study/unreal-1.jpg",
+    { slug: "unreal", title: "Unreal 및 Unity", en: "Unreal & Unity", img: "gallery/study-unreal/p378.jpg",
       summary: "게임 엔진 두 가지를 모두 다룹니다. Unreal로는 환경과 시네마틱을 공부했습니다.",
       body: ["Unreal Engine으로 숲과 마을 환경을 꾸미고, 불이 번지는 장면을 시네마틱 영상으로 만들어 보며 조명, 이펙트, 카메라 연출을 공부했습니다.", "Unity는 산군, AI 실시간 트래킹, AI와 끝말잇기 같은 여러 프로젝트에서 주 엔진으로 써 왔습니다. 두 엔진을 모두 쓸 수 있어서 프로젝트 성격에 맞게 골라 작업합니다."],
       link: "projects.html",
