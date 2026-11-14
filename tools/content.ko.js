@@ -28,7 +28,7 @@ module.exports = {
     ["전시", "국립중앙박물관 · 국립과천과학관"],
   ],
   email: "juranisworking@gmail.com",    // 공개할 이메일
-  phone: "010-9449-8148",    // 전화번호 (예: 010-0000-0000)
+  phone: "",    // 전화번호 (예: 010-0000-0000)
   linkedin: "", // LinkedIn 주소 (예: https://www.linkedin.com/in/아이디)
   github: "wri0raan",
 
@@ -338,7 +338,7 @@ module.exports = {
       "Human/Animal Motion — 모션 캡처 없는 동작 이해와 생성",
       "XR & Interactive Media — 공연·전시를 위한 실시간 인터랙션",
     ],
-    education: [["가톨릭대학교 미디어기술콘텐츠학과 · 복수전공 게임공학", "학사 재학, 2027 졸업 예정 · 전체 GPA 4.2 / 4.5"], ["창평고등학교", "2018.03 – 2021.02 · 창의 과학 영재반 수료"], ["순천대학교 과학영재교육원", "2013.03 – 2015.02"]],
+    education: [["가톨릭대학교 미디어기술콘텐츠학과 · 복수전공 게임공학", "학사 재학, 2027 졸업 예정 · 전체 GPA 4.2 / 4.5"]],
     courses: [
       ["2026-1", "인공지능입문 · 기계학습 · 영상처리", "PyTorch로 타이타닉 생존 예측 분류기, LBP 특징 기반 얼굴 인식, OpenCV 임계값·모폴로지 연산으로 심장 CTA 영역 분할, AI EXPO KOREA 2026 기업 기술 분석 리포트"],
       ["2025-1", "인터랙티브프로젝트실습", "After Effects 모션그래픽 ‘Song for My Dog’"],
