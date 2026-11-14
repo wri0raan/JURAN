@@ -16,6 +16,13 @@ module.exports = {
     ["sangun.jpg", "산군 · 10명 팀 리드", "projects/sangun.html"],
   ],
   heroNow: "지금 · 반려견 보행 3D 복원 졸업논문 · 쿼레이트 CoSpace 1인 개발",
+  // 메인 첫 화면의 연구 분야 4칸: [분야, 세부 주제, 링크]
+  heroFields: [
+    ["컴퓨터 비전", "단안 영상 3D 복원 · 자세 추정", "research/gait.html"],
+    ["물리 기반 시뮬레이션", "군중 · 소프트 바디 · 자력 제어", "research/crowd-sim.html"],
+    ["생성형 AI", "LLM 인터랙션 · 확산 모델", "projects/wordchain.html"],
+    ["XR · 인터랙티브 미디어", "전시 · 실시간 트래킹", "research/xr-cafe.html"],
+  ],
   stats: [
     ["5", "편", "논문 · 발표", "제1저자 2편", "about.html"],
     ["3", "회", "수상", "HCI Korea · KCGS · 지질학회", "about.html"],

@@ -223,3 +223,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .contact-note{grid-column:1/-1;color:var(--mute);margin:8px 0 0;font-size:15px}
 .contact-wrap .contact{flex-direction:column;gap:22px}
 @media (max-width:900px){.contact-wrap{grid-template-columns:1fr;gap:40px 0}.contact-note{margin-top:-16px}}
+/* 메인 연구 분야 4칸 */
+.fields{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:560px}
+.fields a{display:block;padding:14px 16px 15px;border:1px solid var(--line);background:var(--paper);transition:border-color .2s}
+.fields a:hover{border-color:var(--acc)}
+.fields b{display:flex;align-items:center;gap:9px;font-size:16.5px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.fields b::before{content:"";width:8px;height:8px;background:var(--acc);flex:none}
+.fields small{display:block;margin-top:5px;padding-left:17px;font-size:12.5px;color:var(--mute)}
+.fields a:hover b{color:var(--acc)}
+@media (max-width:420px){.fields{gap:8px}.fields a{padding:11px 11px 12px}.fields b{font-size:14px;gap:7px}.fields b::before{width:6px;height:6px}.fields small{font-size:11.5px;padding-left:13px}}
+/* 좁은 화면에서 첫 화면 가로 넘침 방지 */
+.hero>*{min-width:0}
+.now{max-width:100%}

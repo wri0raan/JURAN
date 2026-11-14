@@ -89,6 +89,7 @@ function write(rel, html) {
     <p class="kick">VISUAL COMPUTING · ${esc(C.tagline)}</p>
     <h1>${esc(a)}<br><em>${esc(b)}</em><br>${esc(c)}</h1>
     <p class="intro">${esc(C.heroIntro)}</p>
+    ${C.heroFields ? `<div class="fields" aria-label="연구 분야">${C.heroFields.map(([t, s, h]) => `<a href="${p}${h}"><b>${esc(t)}</b><small>${esc(s)}</small></a>`).join("")}</div>` : ""}
     <p class="now"><span class="dot"></span>${esc(C.heroNow)}</p>
   </div>
   <div class="mosaic">${C.heroTiles.map(([src, cap, href]) => `<a href="${p}${href}">${img(src, cap, p)}<span>${esc(cap)}</span></a>`).join("")}</div>
