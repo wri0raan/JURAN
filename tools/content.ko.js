@@ -152,13 +152,14 @@ module.exports = {
       meta: [["기간", "2023.09 – 2023.12"], ["수업", "컴퓨터그래픽스와 딥러닝"], ["도구", "PyTorch3D · Gymnasium"]],
     },
     {
-      slug: "materials", title: "물리 재질 실험", year: "", badge: "Jelly · Metal · Cloth",
+      slug: "materials", title: "물리 재질 실험", year: "2025", badge: "Jelly · Metal · Cloth",
       img: "gallery/projects-materials/physical_materials_01.jpg", tags: ["Unity", "재질", "렌더링"],
       summary: "같은 구체에 젤리, 금속, 천 재질을 바꿔 입히며 재질마다 빛을 받는 모습이 어떻게 달라지는지 비교한 Unity 실험입니다.",
       body: [
         "Unity에서 세 개의 구체에 Jelly, Metal, Cloth 버튼으로 재질을 바꿔 적용해 보는 실험입니다. 반투명한 젤리, 주변을 비추는 금속, 빛을 부드럽게 흩뜨리는 천이 같은 조명 아래에서 어떻게 다르게 보이는지 한 화면에서 비교할 수 있게 만들었습니다.",
+        "스윙크 개발팀 인턴으로 일하던 2025년 하반기에 따로 공부하며 만든 작업입니다.",
       ],
-      meta: [["도구", "Unity"]],
+      meta: [["기간", "2025 하반기"], ["계기", "스윙크 인턴 중 개인 공부"], ["도구", "Unity"]],
     },
     {
       slug: "tiniping", title: "대학생 ‘티니핑’ 만들기", year: "2024", badge: "DreamBooth · 개인화 이미지 생성",
