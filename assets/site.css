@@ -8,7 +8,7 @@
 :root{
   --bg:#f5f3ee; --paper:#fbfaf7; --ink:#0f1630; --body:#363c52; --mute:#737889; --line:#d9d8d2; --acc:#2440e6;
   --serif:"Paperozi","Noto Sans KR",sans-serif; --sans:"Paperozi","Noto Sans KR","Noto Sans CJK KR",sans-serif;
-  --w:1180px; --gut:clamp(16px,5vw,64px);
+  --w:1440px; --gut:clamp(16px,5vw,64px);
 }
 :root[data-theme="plum"]{--bg:#f6eee9;--paper:#fbf6f2;--ink:#271c21;--body:#43363b;--mute:#7f6d73;--line:#dfcdc6;--acc:#7a2e4a}
 :root[data-theme="powder"]{--bg:#e4ebf3;--paper:#f1f5f9;--ink:#0d1b3d;--body:#2f3d5c;--mute:#66748f;--line:#c5d1df;--acc:#1f4ed8}
