@@ -182,7 +182,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:900px){.mosaic{height:auto;aspect-ratio:4/3}.stats{grid-template-columns:repeat(2,1fr)}.stats a:nth-child(3){padding-left:0;border-left:0}.stats a:nth-child(n+3){border-top:1px solid var(--line)}}
 @media (max-width:900px){
   .hero{grid-template-columns:1fr;gap:28px}
-  .mosaic a:not(:first-child) span{display:none}
+  .mosaic a:not(:first-child) span{padding:18px 8px 6px;font-size:11px}
 }
 @media (max-width:600px){
   .stats a{padding:18px 12px 20px 0}
