@@ -47,7 +47,7 @@
   });
   function bindGallery(sec) {
     var items = sec.querySelectorAll(".mg-i");
-    sec.classList.toggle("has", items.length > 0);
+    sec.classList.toggle("has", items.length > 0 || !!sec.querySelector(".mg-v"));
     items.forEach(function (a, i) {
       a.onclick = function (e) {
         e.preventDefault();

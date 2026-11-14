@@ -6,8 +6,8 @@ const ROOT = path.join(__dirname, "..");
 
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const MISSING = new Set();
-const IMG_RE = /\.(jpe?g|png|gif|webp)$/i;
-const scanDir = (key) => { const d = path.join(ROOT, "images", "gallery", key); return fs.existsSync(d) ? fs.readdirSync(d).filter((f) => IMG_RE.test(f)).sort().map((f) => `gallery/${key}/${f}`) : []; };
+const IMG_RE = /\.(jpe?g|png|gif|webp|mp4)$/i;
+const scanDir = (key) => { const d = path.join(ROOT, "images", "gallery", key); return fs.existsSync(d) ? fs.readdirSync(d).filter((f) => IMG_RE.test(f)).sort((a, b) => (/\.mp4$/i.test(b) - /\.mp4$/i.test(a)) || (a < b ? -1 : 1)).map((f) => `gallery/${key}/${f}`) : []; };
 const has = (src) => src && fs.existsSync(path.join(ROOT, "images", src));
 function img(src, alt, p) {
   if (has(src)) return `<img src="${p}images/${src}" alt="${esc(alt)}" loading="lazy">`;
@@ -120,7 +120,7 @@ function detail(dir, list, it, i, kick) {
   const href = (x) => (x.link && dir === "activities" ? p + x.link : `${x.slug}.html`);
   const key = `${dir}-${it.slug}`;
   const gl = [...new Set([...(it.gallery || []).filter(has), ...scanDir(key)])];
-  const gallery = `<section class="mg" data-key="${key}"><h2 class="mg-h">기록</h2><div class="masonry">${gl.map((g) => `<a class="mg-i" href="${p}images/${g}" data-name="${esc(g.split("/").pop())}"><img src="${p}images/${g}" alt="${esc(it.title || it.name)}" loading="lazy"></a>`).join("")}</div></section>`;
+  const gallery = `<section class="mg" data-key="${key}"><h2 class="mg-h">기록</h2><div class="masonry">${gl.map((g) => /\.mp4$/i.test(g) ? `<div class="mg-v"><video src="${p}images/${g}" autoplay muted loop playsinline preload="metadata"></video></div>` : `<a class="mg-i" href="${p}images/${g}" data-name="${esc(g.split("/").pop())}"><img src="${p}images/${g}" alt="${esc(it.title || it.name)}" loading="lazy"></a>`).join("")}</div></section>`;
   const video = it.video ? `<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/${it.video}" title="${esc(it.title)} 영상" loading="lazy" allowfullscreen></iframe></div>` : "";
   const meta = (it.meta || []).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
   const body = `
