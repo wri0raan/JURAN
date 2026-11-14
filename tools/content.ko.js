@@ -153,10 +153,11 @@ module.exports = {
     },
     {
       slug: "materials", title: "물리 재질 실험", year: "2025", badge: "Jelly · Metal · Cloth",
-      img: "gallery/projects-materials/physical_materials_01.jpg", tags: ["Unity", "재질", "렌더링"],
-      summary: "같은 구체에 젤리, 금속, 천 재질을 바꿔 입히며 재질마다 빛을 받는 모습이 어떻게 달라지는지 비교한 Unity 실험입니다.",
+      img: "gallery/projects-materials/physical_materials_01.jpg", tags: ["Unity", "재질", "렌더링", "탄성"],
+      summary: "같은 구체에 젤리, 금속, 천 재질을 바꿔 입히고, 눌렀을 때 재질마다 다른 탄성으로 반응하게 만든 Unity 실험입니다.",
       body: [
-        "Unity에서 세 개의 구체에 Jelly, Metal, Cloth 버튼으로 재질을 바꿔 적용해 보는 실험입니다. 반투명한 젤리, 주변을 비추는 금속, 빛을 부드럽게 흩뜨리는 천이 같은 조명 아래에서 어떻게 다르게 보이는지 한 화면에서 비교할 수 있게 만들었습니다.",
+        "Unity에서 세 개의 구체에 Jelly, Metal, Cloth 버튼으로 재질을 바꿔 적용해 보는 실험입니다. 반투명한 젤리, 주변을 비추는 금속, 빛을 부드럽게 흩뜨리는 천이 같은 조명 아래에서 어떻게 다르게 보이는지 한 화면에서 비교할 수 있게 했습니다.",
+        "<b>탄성</b> · 겉모습만 바꾸는 데서 그치지 않고, 구체를 눌렀을 때 재질에 따라 탄성이 다르게 반응하도록 만들었습니다.",
         "스윙크 개발팀 인턴으로 일하던 2025년 하반기에 따로 공부하며 만든 작업입니다.",
       ],
       meta: [["기간", "2025 하반기"], ["계기", "스윙크 인턴 중 개인 공부"], ["도구", "Unity"]],
