@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sangun — Web Demo</title>
+  <style>
+    :root {
+      --bg: #0e0e10; --panel: #18181c; --line: #2a2a31;
+      --text: #e9e7e2; --muted: #9a978f; --accent: #e0b25c;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text);
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif; }
+    body { display: flex; flex-direction: column; align-items: center; padding: 16px; gap: 14px; min-height: 100%; }
+    header { width: min(100%, 1280px); display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+    h1 { margin: 0; font-size: 20px; letter-spacing: .02em; }
+    h1 small { color: var(--muted); font-weight: 400; font-size: 13px; margin-left: 8px; }
+    button { font: inherit; color: var(--text); background: var(--panel); border: 1px solid var(--line);
+      border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+    button:hover { border-color: var(--accent); }
+
+    #stage { position: relative; width: min(100%, 1280px, calc((100vh - 170px) * 16 / 9));
+      aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+    #unity-canvas { width: 100%; height: 100%; display: block; background: #000; outline: none; }
+
+    .overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 14px; background: #000; text-align: center; padding: 16px; }
+    .hidden { display: none !important; }
+    #bar { width: min(60%, 360px); height: 4px; background: var(--line); border-radius: 2px; overflow: hidden; }
+    #bar-fill { width: 0; height: 100%; background: var(--accent); transition: width .15s; }
+    #loading-text { color: var(--muted); font-size: 13px; }
+    #end { background: rgba(0,0,0,.88); }
+    #end h2 { margin: 0; font-size: 26px; }
+    #end p { margin: 0; color: var(--muted); }
+
+    #controls { width: min(100%, 1280px); display: flex; flex-wrap: wrap; gap: 8px 22px; color: var(--muted); font-size: 14px; }
+    kbd { display: inline-block; min-width: 24px; padding: 2px 7px; margin-right: 6px; text-align: center;
+      border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; background: var(--panel);
+      color: var(--text); font-family: inherit; font-size: 13px; }
+    #warning { width: min(100%, 1280px); color: #e6866e; font-size: 13px; }
+    @media (pointer: coarse) { #mobile-note { display: block !important; } }
+
+    /* ?embed=1 : 다른 페이지 iframe 안에 넣을 때 게임 화면만 꽉 채움 */
+    .embed, .embed body { height: 100%; overflow: hidden; }
+    .embed body { padding: 0; gap: 0; background: #000; }
+    .embed header, .embed #controls, .embed #mobile-note { display: none !important; }
+    .embed #stage { width: 100%; height: 100%; aspect-ratio: auto; border: 0; border-radius: 0; }
+  </style>
+  <script>if (/[?&]embed=1/.test(location.search)) document.documentElement.classList.add("embed");</script>
+</head>
+<body>
+  <header>
+    <h1>Sangun<small>Web Demo · Map 1</small></h1>
+    <button id="fs-btn" type="button">전체화면</button>
+  </header>
+
+  <div id="stage">
+    <canvas id="unity-canvas" tabindex="-1"></canvas>
+    <div id="loading" class="overlay">
+      <div id="bar"><div id="bar-fill"></div></div>
+      <div id="loading-text">불러오는 중…</div>
+    </div>
+    <div id="end" class="overlay hidden">
+      <h2>체험판은 여기까지입니다</h2>
+      <p>플레이해 주셔서 감사합니다.</p>
+      <button type="button" onclick="location.reload()">처음부터 다시</button>
+    </div>
+  </div>
+
+  <div id="controls">
+    <span><kbd>A</kbd><kbd>D</kbd>좌우 이동</span>
+    <span><kbd>S</kbd>조사 · 상호작용 · 대사 넘기기</span>
+    <span><kbd>마우스</kbd>팝업 · 자물쇠 조작</span>
+  </div>
+  <div id="mobile-note" style="display:none" class="hidden-note">
+    <span style="color:#e6866e;font-size:13px">키보드가 필요한 게임이라 PC 브라우저에서 플레이해 주세요.</span>
+  </div>
+  <div id="warning"></div>
+
+  <script>
+    var canvas = document.querySelector("#unity-canvas");
+    var buildUrl = "Build";
+    var config = {
+      dataUrl: buildUrl + "/WebDemo.data.unityweb",
+      frameworkUrl: buildUrl + "/WebDemo.framework.js.unityweb",
+      codeUrl: buildUrl + "/WebDemo.wasm.unityweb",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "DefaultCompany",
+      productName: "Sangun",
+      productVersion: "0.1.0",
+      showBanner: function (msg, type) {
+        if (type === "error") document.querySelector("#warning").textContent = msg;
+        else console.warn(msg);
+      },
+    };
+
+    window.onSangunDemoEnd = function () {
+      document.querySelector("#end").classList.remove("hidden");
+    };
+
+    var script = document.createElement("script");
+    script.src = buildUrl + "/WebDemo.loader.js";
+    script.onload = function () {
+      createUnityInstance(canvas, config, function (p) {
+        document.querySelector("#bar-fill").style.width = Math.round(p * 100) + "%";
+      }).then(function (instance) {
+        document.querySelector("#loading").classList.add("hidden");
+        canvas.focus();
+        document.querySelector("#fs-btn").onclick = function () { instance.SetFullscreen(1); };
+      }).catch(function (e) {
+        document.querySelector("#loading-text").textContent = "불러오기에 실패했습니다: " + e;
+      });
+    };
+    document.body.appendChild(script);
+    canvas.addEventListener("click", function () { canvas.focus(); });
+  </script>
+</body>
+</html>

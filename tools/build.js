@@ -116,6 +116,9 @@ listPage("studies.html", "배움", "공학 밖에서 배운 것들",
   `<p class="prose" style="max-width:720px;margin-bottom:36px;color:var(--body)">가상 공간과 옷, 움직임을 제대로 만들고 싶어서 공학 밖의 수업들도 찾아 들었습니다. 지금 하는 연구의 관심이 어디서 왔는지 보여주는 기록입니다.</p>
    <div class="studies">${C.studies.map((s) => studyCell(s, "")).join("")}</div>`);
 
+// ---------- 웹 플레이 섹션 (스타일·스크립트를 섹션 안에 같이 넣어 site.css/js를 건드리지 않음)
+const PLAY_ASSETS = `<style>.play{padding:0 0 56px}.play-note{color:var(--mute);font-size:14px;margin:-8px 0 14px}.play-stage{position:relative;aspect-ratio:16/9;background:#0e0e10 var(--cover) center/cover no-repeat;overflow:hidden}.play-stage::before{content:"";position:absolute;inset:0;background:rgba(10,12,20,.55)}.play-stage.on{background:#000}.play-stage.on::before{display:none}.play-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}.play-stage:fullscreen{aspect-ratio:auto;width:100%;height:100%}.play-start{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1;padding:14px 28px;font:inherit;font-size:17px;font-weight:500;color:#fff;background:var(--acc);border:0;cursor:pointer}.play-start:hover{opacity:.9}.play .btns{margin-top:14px}.play button.btn{font:inherit;font-size:14px;font-weight:500;background:none;cursor:pointer}.play-keys{margin-top:12px;color:var(--mute);font-size:14px}</style><script>(function(){var s=document.currentScript.closest(".play");if(!s)return;var src=s.getAttribute("data-play"),st=s.querySelector(".play-stage"),fr=null;function start(){if(fr)return fr;fr=document.createElement("iframe");fr.src=src+(src.indexOf("?")<0?"?":"&")+"embed=1";fr.title="웹 플레이";fr.allow="fullscreen; autoplay";fr.setAttribute("allowfullscreen","");st.innerHTML="";st.appendChild(fr);st.classList.add("on");fr.addEventListener("load",function(){fr.focus();});return fr;}s.querySelector(".play-start").onclick=function(){start().focus();};s.querySelector(".play-fs").onclick=function(){var f=start(),r=st.requestFullscreen||st.webkitRequestFullscreen;if(r)r.call(st);f.focus();};})();</script>`;
+
 // ---------- detail pages
 function detail(dir, list, it, i, kick) {
   const p = "../";
@@ -126,6 +129,8 @@ function detail(dir, list, it, i, kick) {
   const gallery = `<section class="mg" data-key="${key}"><h2 class="mg-h">기록</h2><div class="masonry">${gl.map((g) => /\.mp4$/i.test(g) ? `<div class="mg-v"><video src="${p}images/${g}" autoplay muted loop playsinline preload="metadata"></video></div>` : `<a class="mg-i" href="${p}images/${g}" data-name="${esc(g.split("/").pop())}"><img src="${p}images/${g}" alt="${esc(it.title || it.name)}" loading="lazy"></a>`).join("")}</div></section>`;
   const video = it.video ? `<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/${it.video}" title="${esc(it.title)} 영상" loading="lazy" allowfullscreen></iframe></div>` : "";
   const embed = it.embed ? `<section class="embed3d" style="padding:0 0 56px"><h2 class="mg-h">${esc(it.embed.title || "3D 목업")}</h2><div class="video" style="aspect-ratio:4/3;min-height:480px;margin-bottom:12px"><iframe src="${p}${esc(it.embed.src)}" title="${esc(it.title)} ${esc(it.embed.title || "3D 목업")}" loading="lazy" allow="fullscreen"></iframe></div>${it.embed.note ? `<p style="font-size:14px;opacity:.75">${esc(it.embed.note)} <a href="${p}${esc(it.embed.full || it.embed.src)}" target="_blank" rel="noopener" style="border-bottom:1px solid">새 창에서 크게 보기 ↗</a></p>` : ""}</section>` : "";
+  // 웹 플레이(유니티 WebGL 등): 버튼을 눌러야 iframe을 불러옴 (용량이 커서 자동 로드 안 함)
+  const play = it.play ? `<section class="play" data-play="${esc(p + it.play.src)}"><h2 class="mg-h">웹에서 플레이</h2>${it.play.note ? `<p class="play-note">${esc(it.play.note)}</p>` : ""}<div class="play-stage" style="--cover:url('${p}images/${esc(it.img)}')"><button class="play-start" type="button">▶ 플레이</button></div><div class="btns"><a class="btn" href="${esc(p + it.play.src)}" target="_blank" rel="noopener">새 창으로 열기 ↗</a><button class="btn play-fs" type="button">전체화면</button></div>${it.play.keys ? `<p class="play-keys">${esc(it.play.keys)}</p>` : ""}${PLAY_ASSETS}</section>` : "";
   const meta = (it.meta || []).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
   const body = `
 <a class="back" href="${p}${dir === "study" ? "studies" : dir}.html">← ${kick} 목록</a>
@@ -135,7 +140,7 @@ function detail(dir, list, it, i, kick) {
   <div class="prose">${(it.body || []).map((x) => `<p>${x}</p>`).join("")}${it.why ? `<p class="why">${esc(it.why)}</p>` : ""}${it.link && dir === "study" ? `<p><a href="${p}${it.link}" style="border-bottom:1px solid">관련 작업 보기 →</a></p>` : ""}</div>
   <dl class="meta">${meta}${it.tags ? `<dt>키워드</dt><dd>${it.tags.map(esc).join(" · ")}</dd>` : ""}</dl>
 </div>
-${video}${gallery}${embed}
+${video}${gallery}${embed}${play}
 <nav class="pager">${prev ? `<a href="${href(prev)}">← 이전<b>${esc(prev.title || prev.name)}</b></a>` : "<span></span>"}${next ? `<a href="${href(next)}" style="text-align:right">다음 →<b>${esc(next.title || next.name)}</b></a>` : ""}</nav>`;
   write(`${dir}/${it.slug}.html`, page({ title: `${it.title || it.name} · ${C.name}`, desc: it.summary, p, current: dir === "study" ? "studies.html" : `${dir}.html`, body }));
 }
