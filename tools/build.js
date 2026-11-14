@@ -25,7 +25,10 @@ function page({ title, desc, p, current, body }) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc || C.heroIntro)}">
-<link rel="icon" href="${p}favicon.svg">
+<link rel="icon" href="${p}favicon.ico" sizes="32x32">
+<link rel="icon" href="${p}favicon.svg" type="image/svg+xml">
+<link rel="icon" href="${p}favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="${p}apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${p}assets/site.css?v=${ver("assets/site.css")}">
