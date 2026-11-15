@@ -126,7 +126,7 @@ function detail(dir, list, it, i, kick) {
   const prev = list[i - 1], next = list[i + 1];
   const href = (x) => (x.link && dir === "activities" ? p + x.link : `${x.slug}.html`);
   const key = `${dir}-${it.slug}`;
-  const gl = [...new Set([...(it.gallery || []).filter(has), ...scanDir(key)])].filter((g) => g !== it.heroVideo);
+  const gl = [...new Set([...(it.gallery || []).filter(has), ...scanDir(key)])].filter((g) => g !== it.heroVideo).sort((x, y) => /(^|\/)cert[-_]/.test(y) - /(^|\/)cert[-_]/.test(x));
   const gallery = `<section class="mg" data-key="${key}"><h2 class="mg-h">기록</h2><div class="masonry">${gl.map((g) => /\.mp4$/i.test(g) ? `<div class="mg-v"><video src="${p}images/${g}" autoplay muted loop playsinline preload="metadata"></video></div>` : `<a class="mg-i" href="${p}images/${g}" data-name="${esc(g.split("/").pop())}"><img src="${p}images/${g}" alt="${esc(it.title || it.name)}" loading="lazy"></a>`).join("")}</div></section>`;
   const video = it.video ? `<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/${it.video}" title="${esc(it.title)} 영상" loading="lazy" allowfullscreen></iframe></div>` : "";
   const embed = it.embed ? `<section class="embed3d" style="padding:0 0 56px"><h2 class="mg-h">${esc(it.embed.title || "3D 목업")}</h2><div class="video" style="aspect-ratio:4/3;min-height:480px;margin-bottom:12px"><iframe src="${p}${esc(it.embed.src)}" title="${esc(it.title)} ${esc(it.embed.title || "3D 목업")}" loading="lazy" allow="fullscreen"></iframe></div>${it.embed.note ? `<p style="font-size:14px;opacity:.75">${esc(it.embed.note)} <a href="${p}${esc(it.embed.full || it.embed.src)}" target="_blank" rel="noopener" style="border-bottom:1px solid">새 창에서 크게 보기 ↗</a></p>` : ""}</section>` : "";
