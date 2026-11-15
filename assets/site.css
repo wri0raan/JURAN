@@ -237,8 +237,5 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .now{max-width:100%}
 /* 분야 칸이 홀수면 마지막 칸을 가로로 길게 */
 .fields a:last-child:nth-child(odd){grid-column:1/-1}
-/* 진행 중: 여러 줄 */
-.now{border-radius:14px;align-items:flex-start;padding:9px 16px 9px 14px}
-.now .dot{margin-top:7px}
-.now-t{display:flex;flex-direction:column;gap:2px;line-height:1.55}
-.now-t b{font-size:12px;letter-spacing:.04em;color:var(--acc);font-weight:700}
+/* 진행 중: 한 줄 */
+.now-t b{color:var(--acc);font-weight:700;margin-right:4px}
