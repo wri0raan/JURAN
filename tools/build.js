@@ -160,7 +160,7 @@ C.studies.forEach((it, i, a) => detail("study", a, it, i, "배움"));
   const body = `
 <div class="dhead"><p class="kick">ABOUT</p><h1>소개</h1></div>
 <section class="sec"><div class="dbody" style="padding:0">
-  <div class="prose"><p class="about-lead">${esc(A.lead)}</p>${A.story.map((s) => `<p>${esc(s)}</p>`).join("")}<p style="color:var(--mute);font-size:15px">${esc(A.early)}</p>${(A.earlyImgs || []).length ? `<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">${A.earlyImgs.map(([src, cap]) => `<a class="mg-i" href="images/${src}" data-name="${esc(cap)}" style="width:150px;display:block"><img src="images/${src}" alt="${esc(cap)}" loading="lazy" style="width:100%;border:1px solid var(--line)"><span style="display:block;font-size:12px;color:var(--mute);margin-top:6px;line-height:1.4">${esc(cap)}</span></a>`).join("")}</div>` : ""}</div>
+  <div class="prose"><p class="about-lead">${esc(A.lead)}</p>${A.story.map((s) => `<p>${esc(s)}</p>`).join("")}<p style="color:var(--mute);font-size:15px">${esc(A.early)}</p></div>
   <div><figure class="profile" data-profile><img src="images/profile.jpg?v=${ver("images/profile.jpg")}" alt="${esc(C.name)} 프로필 사진" onerror="this.outerHTML='<div class=&quot;ph&quot;><span>프로필 사진</span></div>'"></figure>
   <dl class="meta"><dt>관심 분야</dt>${A.interests.map((x) => `<dd>${esc(x)}</dd>`).join("")}</dl></div>
 </div></section>
@@ -179,7 +179,8 @@ ${A.courses ? `<section class="sec">${sh("", "주요 수강 과목")}${tl(A.cour
 write("history.html", page({ title: `이전 수상·활동 내역 · ${C.name}`, p: "", current: "about.html", body: `
 <a class="back" href="about.html">← 소개로 돌아가기</a>
 <div class="dhead"><p class="kick">ARCHIVE</p><h1>이전 수상·활동 내역</h1><p class="lede">어릴 때부터 받은 상장과 활동 기록을 정리하고 있습니다.</p></div>
-<section class="sec"><div style="padding:56px 24px;border:1px dashed var(--line);text-align:center;color:var(--mute)"><b style="display:block;font-size:20px;color:var(--ink);margin-bottom:8px">준비 중입니다</b>상장과 기록을 정리해서 곧 올릴게요.</div></section>` }));
+<section class="sec"><h2 class="mg-h">중학생 때 · 지구과학 연구</h2><p style="color:var(--body);margin-bottom:18px">순천대학교 부설 영재원 지구과학반에서 한 연구로 받은 상입니다.</p><div style="display:flex;gap:16px;flex-wrap:wrap">${(C.about.earlyImgs || []).map(([src, cap]) => `<a class="mg-i" href="images/${src}" data-name="${esc(cap)}" style="width:220px;display:block"><img src="images/${src}" alt="${esc(cap)}" loading="lazy" style="width:100%;border:1px solid var(--line)"><span style="display:block;font-size:13px;color:var(--mute);margin-top:8px;line-height:1.45">${esc(cap)}</span></a>`).join("")}</div></section>
+<section class="sec"><div style="padding:40px 24px;border:1px dashed var(--line);text-align:center;color:var(--mute)"><b style="display:block;font-size:18px;color:var(--ink);margin-bottom:6px">나머지는 정리 중입니다</b>어릴 때부터 받은 상장과 기록을 연도별로 올릴 예정입니다.</div></section>` }));
 
 write("images/필요한-사진-목록.md", "# 아직 없는 사진\n\n이 이름으로 images/ 폴더에 넣고 `node tools/build.js` 하면 자동으로 들어갑니다.\n\n" + [...MISSING].sort().map((m) => "- " + m).join("\n") + "\n");
 console.log("built, missing:", MISSING.size);
