@@ -160,7 +160,7 @@ C.studies.forEach((it, i, a) => detail("study", a, it, i, "배움"));
   const body = `
 <div class="dhead"><p class="kick">ABOUT</p><h1>소개</h1></div>
 <section class="sec"><div class="dbody" style="padding:0">
-  <div class="prose"><p class="about-lead">${esc(A.lead)}</p>${A.story.map((s) => `<p>${esc(s)}</p>`).join("")}<p style="color:var(--mute);font-size:15px">${esc(A.early)}</p></div>
+  <div class="prose"><p class="about-lead">${esc(A.lead)}</p>${A.story.map((s) => `<p>${esc(s)}</p>`).join("")}<p style="color:var(--mute);font-size:15px">${esc(A.early)}</p>${(A.earlyImgs || []).length ? `<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:4px">${A.earlyImgs.map(([src, cap]) => `<a class="mg-i" href="images/${src}" data-name="${esc(cap)}" style="width:150px;display:block"><img src="images/${src}" alt="${esc(cap)}" loading="lazy" style="width:100%;border:1px solid var(--line)"><span style="display:block;font-size:12px;color:var(--mute);margin-top:6px;line-height:1.4">${esc(cap)}</span></a>`).join("")}</div>` : ""}</div>
   <div><figure class="profile" data-profile><img src="images/profile.jpg?v=${ver("images/profile.jpg")}" alt="${esc(C.name)} 프로필 사진" onerror="this.outerHTML='<div class=&quot;ph&quot;><span>프로필 사진</span></div>'"></figure>
   <dl class="meta"><dt>관심 분야</dt>${A.interests.map((x) => `<dd>${esc(x)}</dd>`).join("")}</dl></div>
 </div></section>
@@ -168,7 +168,7 @@ C.studies.forEach((it, i, a) => detail("study", a, it, i, "배움"));
 <section class="sec">${sh("", "학력")}${tl(A.education.map(([a, b]) => ["", a, b]))}</section>
 ${A.etc ? `<section class="sec">${sh("", "그 밖의 활동")}<p class="prose" style="max-width:820px;color:var(--body)">${esc(A.etc)}</p></section>` : ""}
 ${A.courses ? `<section class="sec">${sh("", "주요 수강 과목")}${tl(A.courses)}</section>` : ""}
-<section class="sec">${sh("", "논문 · 발표")}<div class="tl">${A.pubs.map(([y, ti, au, u]) => `<span class="y">${esc(y)}</span><div><a href="${esc(u)}" target="_blank" rel="noopener"><b>${esc(ti)}</b> <span style="color:var(--acc)">↗</span></a><br><span>${esc(au).replace("김주란", "<u>김주란</u>")}</span></div>`).join("")}</div></section>
+<section class="sec">${sh("", "논문 · 발표")}<div class="tl">${A.pubs.map(([y, ti, au, u]) => `<span class="y">${esc(y)}</span><div>${u ? `<a href="${esc(u)}" target="_blank" rel="noopener"><b>${esc(ti)}</b> <span style="color:var(--acc)">↗</span></a>` : `<b>${esc(ti)}</b>`}<br><span>${esc(au).replace("김주란", "<u>김주란</u>")}</span></div>`).join("")}</div></section>
 <section class="sec">${sh("", "수상")}${tl(A.awards.map(([y, t]) => [y, t]))}<p style="margin-top:18px"><a href="history.html" style="border-bottom:1px solid;color:var(--acc)">이전 수상·활동 내역 보기 →</a></p></section>
 <section class="sec">${sh("", "기술")}${tl(A.skills.map(([k, v]) => [k, v]))}</section>
 <section class="sec">${sh("", "배운 것", "studies.html")}<div class="studies">${C.studies.map((s) => studyCell(s, "")).join("")}</div></section>
