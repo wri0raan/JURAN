@@ -196,7 +196,7 @@ module.exports = {
     },
     {
       slug: "wordchain", title: "AI와 끝말잇기", year: "2025", badge: "학술연구 우수상 · 단독 개발",
-      img: "wordchain.jpg", tags: ["Unity", "GPT-4", "FastAPI", "TTS"], home: true,
+      img: "wordchain-play.gif", tags: ["Unity", "GPT-4", "FastAPI", "TTS"], home: true,
       links: [["논문 보기 (PDF)", "../papers/wordchain-2025.pdf"]],
       summary: "단어 요정 ‘마리’와 끝말잇기를 주고받는 대화형 단어 게임입니다. 이 작업을 정리한 논문으로 학술연구 우수상을 받았습니다.",
       body: [
