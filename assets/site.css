@@ -235,3 +235,5 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 /* 좁은 화면에서 첫 화면 가로 넘침 방지 */
 .hero>*{min-width:0}
 .now{max-width:100%}
+/* 분야 칸이 홀수면 마지막 칸을 가로로 길게 */
+.fields a:last-child:nth-child(odd){grid-column:1/-1}
