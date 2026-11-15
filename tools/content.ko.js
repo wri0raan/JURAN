@@ -35,7 +35,7 @@ module.exports = {
   ],
   email: "juranisworking@gmail.com",    // 공개할 이메일
   phone: "",    // 전화번호 (예: 010-0000-0000)
-  linkedin: "", // LinkedIn 주소 (예: https://www.linkedin.com/in/아이디)
+  linkedin: "https://www.linkedin.com/in/juranisworking/",
   github: "wri0raan",
 
   research: [
