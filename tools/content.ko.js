@@ -274,7 +274,7 @@ module.exports = {
       ],
       meta: [["기간", "2024.12"], ["장소", "일본 도쿄"], ["역할", "전시 · 등록 · 체험 부스 지원"]] },
     { slug: "siggraph-2022", year: "2022", name: "SIGGRAPH Asia 2022 대구 · 학생 자원봉사자(SV) 선발", role: "학회 운영 · 참가자 지원", img: "gallery/activities-siggraph-2022/ic221.jpg",
-      gallery: ["siggraph-2022-1.jpg", "siggraph-2022-2.jpg", "siggraph-2022-3.jpg", "siggraph-2022-4.jpg"],
+      gallery: ["siggraph-2022-1.jpg", "siggraph-2022-3.jpg", "siggraph-2022-4.jpg"],
       summary: "SIGGRAPH Asia 2022 학생 자원봉사자로 세션 운영과 참가자 안내를 맡았습니다. 처음으로 학회를 안쪽에서 본 경험입니다.",
       body: [
         "SIGGRAPH Asia 2022에 학생 자원봉사자(SV)로 선발돼 세션 운영, 참가자 안내, 홍보, 현장 관리를 맡았습니다.",
