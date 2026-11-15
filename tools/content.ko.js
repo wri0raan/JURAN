@@ -113,7 +113,7 @@ module.exports = {
     },
     {
       slug: "tracking", title: "트래킹 프로젝트", year: "2025", badge: "몸으로 하는 놀이 콘텐츠",
-      img: "gallery/projects-tracking/tracking_travelmap_02.jpg", tags: ["Unity", "MediaPipe", "포즈 추정", "인터랙션"],
+      img: "tracking-play.gif", tags: ["Unity", "MediaPipe", "포즈 추정", "인터랙션"],
       summary: "카메라 앞에서 몸을 움직이면 캐릭터가 따라 움직이고, 그림이 지워지고, 여행지 배경 속으로 들어가는 트래킹 놀이 모음과 요리 체험입니다.",
       body: [
         "스윙크 개발팀 인턴으로 일하며 몸 트래킹 기술로 만든 놀이 콘텐츠입니다. 별도의 장비 없이 카메라 하나로 관람객의 몸을 추적해, 아이부터 어른까지 화면 앞에서 바로 몸을 움직여 즐길 수 있게 했습니다.",
@@ -171,7 +171,7 @@ module.exports = {
     },
     {
       slug: "tiniping", title: "대학생 ‘티니핑’ 만들기", year: "2024", badge: "DreamBooth · 개인화 이미지 생성",
-      img: "tiniping.jpg", tags: ["DreamBooth", "확산 모델", "Colab", "GPT-4"], home: true,
+      img: "tiniping.jpg", tags: ["DreamBooth", "확산 모델", "Colab", "GPT-4"], home: false,
       summary: "애니메이션 ‘티니핑’ 약 140종의 이미지를 학습해, 이름과 특징만 넣으면 같은 화풍의 새 캐릭터를 그려 주는 개인화 이미지 생성 모델을 만들었습니다.",
       body: [
         "‘OO핑’이라는 이름과 특징을 입력하면 같은 세계관의 캐릭터를 그려 주는 모델을 목표로 한 개인 연구 프로젝트입니다. 대학생이 공감할 수 있는 ‘대학생 티니핑’ 16종을 결과물로 정했습니다.",
@@ -182,7 +182,7 @@ module.exports = {
     },
     {
       slug: "maeum-songil", title: "마음손길 · 전자 점자 태블릿", year: "2021", badge: "창업 데모데이 최우수상 · 하드웨어 시제품",
-      img: "maeum-songil.jpg", tags: ["Arduino", "3D 프린팅", "Fusion 360", "창업"], home: true,
+      img: "maeum-songil.jpg", tags: ["Arduino", "3D 프린팅", "Fusion 360", "창업"], home: false,
       summary: "시각장애인이 태블릿에서 점자를 읽고 쓸 수 있도록 만든 전자 점자 태블릿 시제품입니다. 2021 하계 계절학기 ‘4차 산업혁명 기술과 창업’에서 팀으로 진행했습니다.",
       body: [
         "비시각장애인은 태블릿 하나로 수많은 문서를 읽고 쓰지만, 시각장애인은 여전히 종이에 도구로 점자를 찍어야 합니다. 이 학습 격차를 줄이기 위해 선택한 문서를 태블릿 표면에 점자로 띄우고, 손에 익은 점자 필기 방식 그대로 글자를 입력할 수 있는 전자 점자 태블릿을 기획했습니다.",
