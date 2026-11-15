@@ -126,7 +126,7 @@ function detail(dir, list, it, i, kick) {
   const prev = list[i - 1], next = list[i + 1];
   const href = (x) => (x.link && dir === "activities" ? p + x.link : `${x.slug}.html`);
   const key = `${dir}-${it.slug}`;
-  const gl = [...new Set([...(it.gallery || []).filter(has), ...scanDir(key)])];
+  const gl = [...new Set([...(it.gallery || []).filter(has), ...scanDir(key)])].filter((g) => g !== it.heroVideo);
   const gallery = `<section class="mg" data-key="${key}"><h2 class="mg-h">기록</h2><div class="masonry">${gl.map((g) => /\.mp4$/i.test(g) ? `<div class="mg-v"><video src="${p}images/${g}" autoplay muted loop playsinline preload="metadata"></video></div>` : `<a class="mg-i" href="${p}images/${g}" data-name="${esc(g.split("/").pop())}"><img src="${p}images/${g}" alt="${esc(it.title || it.name)}" loading="lazy"></a>`).join("")}</div></section>`;
   const video = it.video ? `<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/${it.video}" title="${esc(it.title)} 영상" loading="lazy" allowfullscreen></iframe></div>` : "";
   const embed = it.embed ? `<section class="embed3d" style="padding:0 0 56px"><h2 class="mg-h">${esc(it.embed.title || "3D 목업")}</h2><div class="video" style="aspect-ratio:4/3;min-height:480px;margin-bottom:12px"><iframe src="${p}${esc(it.embed.src)}" title="${esc(it.title)} ${esc(it.embed.title || "3D 목업")}" loading="lazy" allow="fullscreen"></iframe></div>${it.embed.note ? `<p style="font-size:14px;opacity:.75">${esc(it.embed.note)} <a href="${p}${esc(it.embed.full || it.embed.src)}" target="_blank" rel="noopener" style="border-bottom:1px solid">새 창에서 크게 보기 ↗</a></p>` : ""}</section>` : "";
@@ -139,7 +139,7 @@ function detail(dir, list, it, i, kick) {
   const body = `
 <a class="back" href="${p}${dir === "study" ? "studies" : dir}.html">← ${kick} 목록</a>
 <div class="dhead"><p class="kick">${esc(it.en || [it.year, it.badge].filter(Boolean).join(" · "))}</p><h1>${esc(it.title || it.name)}</h1><p class="lede">${esc(it.summary)}</p>${(it.links || []).length ? `<div class="btns">${it.links.map(([l, u]) => `<a class="btn" href="${esc(u)}" target="_blank" rel="noopener">${esc(l)} ↗</a>`).join("")}</div>` : ""}</div>
-<figure class="dhero${it.fit ? " fit" : ""}">${img(it.img, it.title || it.name, p)}</figure>
+<figure class="dhero${it.fit && !it.heroVideo ? " fit" : ""}">${it.heroVideo && has(it.heroVideo) ? `<video src="${p}images/${it.heroVideo}" poster="${p}images/${it.img}" autoplay muted loop playsinline style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#000"></video>` : img(it.img, it.title || it.name, p)}</figure>
 <div class="dbody">
   <div class="prose">${(it.body || []).map((x) => `<p>${x}</p>`).join("")}${it.why ? `<p class="why">${esc(it.why)}</p>` : ""}${it.link && dir === "study" ? `<p><a href="${p}${it.link}" style="border-bottom:1px solid">관련 작업 보기 →</a></p>` : ""}</div>
   <dl class="meta">${meta}${it.tags ? `<dt>키워드</dt><dd>${it.tags.map(esc).join(" · ")}</dd>` : ""}</dl>

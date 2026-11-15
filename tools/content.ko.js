@@ -66,7 +66,7 @@ module.exports = {
     },
     {
       slug: "crowd-sim", title: "군중 시뮬레이션 연구", year: "2025", badge: "KCGS 2025 포스터 · AI 군중 시뮬레이션",
-      img: "crowd-play.gif", gallery: ["crowd.jpg", "crowd-2.jpg"], fit: true, tags: ["군중 시뮬레이션", "안전", "정서 확산", "LLM"],
+      img: "crowd-play.gif", heroVideo: "gallery/research-crowd-sim/v-demo.mp4", gallery: ["crowd.jpg", "crowd-2.jpg"], fit: true, tags: ["군중 시뮬레이션", "안전", "정서 확산", "LLM"],
       links: [["AI 군중 시뮬레이션 논문 (PDF)", "../papers/crowd-affective-2025.pdf"]],
       summary: "스스로 움직여 흐름을 나누는 동적 울타리로 7000명 대피 시간을 24.6% 줄인 연구와, 군중의 감정이 퍼져 나가는 과정을 AI로 시뮬레이션한 연구입니다.",
       body: [
@@ -113,7 +113,7 @@ module.exports = {
     },
     {
       slug: "tracking", title: "트래킹 프로젝트", year: "2025", badge: "몸으로 하는 놀이 콘텐츠",
-      img: "tracking-play.gif", tags: ["Unity", "MediaPipe", "포즈 추정", "인터랙션"],
+      img: "tracking-play.gif", heroVideo: "gallery/projects-tracking/v-demo.mp4", tags: ["Unity", "MediaPipe", "포즈 추정", "인터랙션"],
       summary: "카메라 앞에서 몸을 움직이면 캐릭터가 따라 움직이고, 그림이 지워지고, 여행지 배경 속으로 들어가는 트래킹 놀이 모음과 요리 체험입니다.",
       body: [
         "스윙크 개발팀 인턴으로 일하며 몸 트래킹 기술로 만든 놀이 콘텐츠입니다. 별도의 장비 없이 카메라 하나로 관람객의 몸을 추적해, 아이부터 어른까지 화면 앞에서 바로 몸을 움직여 즐길 수 있게 했습니다.",
@@ -196,7 +196,7 @@ module.exports = {
     },
     {
       slug: "wordchain", title: "AI와 끝말잇기", year: "2025", badge: "학술연구 우수상 · 단독 개발",
-      img: "wordchain-play.gif", tags: ["Unity", "GPT-4", "FastAPI", "TTS"], home: true,
+      img: "wordchain-play.gif", heroVideo: "gallery/projects-wordchain/v-demo.mp4", tags: ["Unity", "GPT-4", "FastAPI", "TTS"], home: true,
       links: [["논문 보기 (PDF)", "../papers/wordchain-2025.pdf"]],
       summary: "단어 요정 ‘마리’와 끝말잇기를 주고받는 대화형 단어 게임입니다. 이 작업을 정리한 논문으로 학술연구 우수상을 받았습니다.",
       body: [
