@@ -8,7 +8,7 @@ const R = (n) => "gallery/activities-raons/" + n, RP = (n) => "gallery/activitie
 module.exports = {
   name: "김주란",
   nameEn: "Juran Kim",
-  tagline: "몸과 움직임을 재고, 계산하고, 다시 경험하게",
+  tagline: "그래픽스 · 시뮬레이션 · 비전 · XR",
   heroTitle: ["현실의 움직임을", "가상으로 옮기고,", "다시 현실로 돌려줍니다"],
   heroIntro:
     "화면 너머의 세계가 진짜처럼 느껴지려면 무엇이 필요할까. 그 질문을 따라 컴퓨터그래픽스와 시뮬레이션, 비전을 공부했고, 지금은 실제 움직임과 가상의 세계를 잇는 프로젝트들을 하고 있습니다.",
@@ -22,10 +22,10 @@ module.exports = {
   heroNow: ["반려견 보행 물리 시뮬레이션 졸업논문", "쿼레이트 CoSpace 1인 개발"],
   // 메인 첫 화면의 연구 분야: [분야, 세부 주제, 링크]. 홀수면 마지막 칸이 가로로 길게 놓인다.
   heroFields: [
-    ["재기 · 컴퓨터 비전", "동작 분석 · 자세 추정 · 영상 기반 3D 측정", "projects/acupoint.html"],
-    ["계산하기 · 시뮬레이션", "물리 기반 몸 모델 · 보행 · 군중 · 그래픽스", "research/gait.html"],
-    ["돌려주기 · XR", "전시 인터랙션 · 디지털 트윈 · 체험", "research/xr-cafe.html"],
-    ["더 멀리 · 신경 인터페이스", "신경 신호로 몸을 움직이고 감각을 되돌려 주기", "about.html"],
+    ["물리 시뮬레이션", "몸 모델 · 보행 · 군중", "research/gait.html"],
+    ["컴퓨터 비전", "동작 분석 · 자세 추정 · 트래킹", "projects/acupoint.html"],
+    ["컴퓨터 그래픽스", "캐릭터 · 3D 시각화 · 메쉬", "projects/deep-learning-cg.html"],
+    ["XR · 디지털 트윈", "전시 인터랙션 · 공간 시각화", "projects/xr-spatial.html"],
   ],
   stats: [
     ["8", "편", "논문 · 발표", "제1저자 · 단독 4편", "about.html"],
