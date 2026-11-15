@@ -70,7 +70,7 @@ function contactBlock() {
   if (C.phone) items.push(`<a href="tel:${esc(C.phone.replace(/[^0-9+]/g, ""))}"><small>전화</small>${esc(C.phone)}</a>`);
   if (C.linkedin) items.push(`<a href="${esc(C.linkedin)}" target="_blank" rel="noopener"><small>LinkedIn</small>${esc(C.linkedin.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</a>`);
   const ph = arguments[0] || "";
-  return `<div class="contact-wrap"><div><div class="contact">${items.join("")}</div></div><figure class="contact-ph"><img src="${ph}images/contact.jpg?v=${ver("images/contact.jpg")}" alt="${esc(C.name)}와 반려견 레오" loading="lazy"></figure><p class="contact-note">연구·협업·인턴 제안 모두 환영합니다.</p></div>`;
+  return `<div class="contact-wrap"><div><div class="contact">${items.join("")}</div></div><figure class="contact-ph"><img src="${ph}images/contact.jpg?v=${ver("images/contact.jpg")}" alt="${esc(C.name)}와 반려견 레오" loading="lazy"></figure><p class="contact-note">연구·협업 제안과 채용 문의 모두 환영합니다.</p></div>`;
 }
 
 function write(rel, html) {
