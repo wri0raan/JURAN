@@ -224,8 +224,8 @@ module.exports = {
         "<b>구성</b> · 7개 맵마다 피하기, 싸우기, 타임 어택 같은 다른 미니게임을 넣었습니다. 세 명이 Git 브랜치를 나눠 작업했습니다.",
         "<b>수상</b> · 2025 디지털콘텐츠 이노베이션 페스티벌 제작–SW 부문 우수상을 받았습니다.",
       ],
-      links: [["새 창에서 플레이", "https://wri0raan.github.io/Game1-CodeBlack/"]],
-      play: { src: "https://wri0raan.github.io/Game1-CodeBlack/", aspect: "1/1", note: "원본 게임은 C++과 SDL2로 개발했습니다. 이 웹 데모는 브라우저에서 바로 해 볼 수 있도록 같은 로직을 JavaScript로 옮긴 것이고, 게임 설계·수치·스테이지 구성·리소스는 모두 원본 C++ 프로젝트의 것입니다. 소리가 재생됩니다.", keys: "조작 · <b>방향키</b> 이동 · <b>X</b> 달리기 · <b>Space</b> 공격 · <b>A</b> 미니맵 · <b>S</b> 조작법 다시 보기 · 메뉴는 <b>마우스</b> · 게임 화면을 한 번 클릭한 뒤 조작하세요" },
+      links: [["새 창에서 플레이", "https://wri0raan.github.io/Game1-CodeBlack/"], ["GitHub에서 보기", "https://github.com/wri0raan/Game1-CodeBlack"]],
+      play: { src: "https://wri0raan.github.io/Game1-CodeBlack/", aspect: "1/1", note: "원본 게임은 C++과 SDL2로 개발했고, 코드는 GitHub에 있습니다. 이 웹 데모는 브라우저에서 바로 해 볼 수 있도록 같은 로직을 JavaScript로 옮긴 것이고, 게임 설계·수치·스테이지 구성·리소스는 모두 원본 C++ 프로젝트의 것입니다. 소리가 재생됩니다.", keys: "조작 · <b>방향키</b> 이동 · <b>X</b> 달리기 · <b>Space</b> 공격 · <b>A</b> 미니맵 · <b>S</b> 조작법 다시 보기 · 메뉴는 <b>마우스</b> · 게임 화면을 한 번 클릭한 뒤 조작하세요" },
       meta: [["기간", "2025.03 – 2025.08"], ["수상", "디지털콘텐츠 이노베이션 페스티벌 제작–SW 부문 우수상 (가톨릭대 미디어기술콘텐츠학과, 2025.11)"], ["역할", "메인 프로그래머 · 보스전 총괄"], ["팀", "제21개발소 · 개발 3명"], ["도구", "C++ · SDL2 · Git"]],
     },
     {
