@@ -90,7 +90,7 @@ function write(rel, html) {
     <h1>${esc(a)}<br><em>${esc(b)}</em><br>${esc(c)}</h1>
     <p class="intro">${esc(C.heroIntro)}</p>
     ${C.heroFields ? `<div class="fields" aria-label="연구 분야">${C.heroFields.map(([t, s, h]) => `<a href="${p}${h}"><b>${esc(t)}</b><small>${esc(s)}</small></a>`).join("")}</div>` : ""}
-    <p class="now"><span class="dot"></span>${esc(C.heroNow)}</p>
+    <p class="now"><span class="dot"></span><span class="now-t"><b>진행 중</b>${[].concat(C.heroNow).map((x) => `<span>${esc(x)}</span>`).join("")}</span></p>
   </div>
   <div class="mosaic">${C.heroTiles.map(([src, cap, href]) => `<a href="${p}${href}">${img(src, cap, p)}<span>${esc(cap)}</span></a>`).join("")}</div>
 </section>
