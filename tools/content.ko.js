@@ -366,7 +366,7 @@ module.exports = {
       ["2024", "XR 테이크아웃 카페", "김주란, 나경민, 소병욱, 윤선민, 이시후, 최명걸 · HCI Korea 2024 · 창의상 우수상", "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11714831"],
       ["2023", "외부 자력을 이용한 촉수 생명체 애니매트로닉스 시뮬레이션", "김예영, 김도희, 김주란, 오나현, 최명걸 · 한국컴퓨터그래픽스학회 논문지 29(5), 1–9", "papers/jkcgs-2023-animatronics.pdf"],
       ["2022", "자력 제어를 이용한 관절 운동 구현", "오나현, 김도희, 김예영, 김주란, 최명걸 · KCGS 2022 · 우수발표상", "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11135599"],
-      ["2017", "남원지역에 분포하는 쥐라기 심성암류에 관한 modal 분석", "김주란, 이주연, 김정빈 · 대한지질학회 추계지질과학연합학술대회 (중학생 때)", "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07263637"],
+      ["2017", "남원지역에 분포하는 쥐라기 심성암류에 관한 modal 분석", "김주란, 이주연, 김정빈 · 대한지질학회 2017 추계지질과학연합학술대회 포스터 · 제19회 우수포스터논문발표자상 (중학생 때)", "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07263637"],
     ],
     awards: [
       ["2025", "학술연구우수 장학금 — 미디어기술콘텐츠학과 · AI 끝말잇기 논문"],
