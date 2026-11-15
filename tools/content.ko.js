@@ -383,7 +383,7 @@ module.exports = {
     early: "초등학생 때 순천시 교육청 영재원에서 LED 큐브, LED POV 디스플레이, 비접촉 센서 피아노를 만들었습니다. 중학생 때는 순천대학교 부설 영재원 지구과학반에서 2016년 한국지구과학회 포스터 발표로 장려상을, 이듬해 남원 지역 암석을 분석한 연구를 1저자로 대한지질학회에서 발표해 우수포스터논문발표자상을 받았습니다. 대한민국 학생 창의력 챔피언 대회에는 2013년부터 2018년까지 네 번 나가 수상했습니다.",
   },
 
-  // 공학 밖에서 배운 것 — 사진은 images/study/ 에 넣으면 됨
+  // 배움: 전공·공학 수업과 다른 분야 수업, 개인 공부. 공학 과목도 같은 형식으로 추가하면 됨
   studies: [
     { slug: "color", title: "색채학", en: "Color Science", img: "gallery/study-color/p204.jpg",
       summary: "색의 기본 성질부터 색 체계, 퍼스널 컬러, 트렌드 컬러 기획까지.",
@@ -405,10 +405,6 @@ module.exports = {
       video: "BC_Bopb9YtQ",
       summary: "영상 제작의 프리프로덕션: 기획, 스토리보드, 애니매틱스.",
       body: ["영상 제작의 첫 단계인 기획, 스토리보드, 애니매틱스를 실습했습니다. 아이디어를 장면 순서로 옮기고 작업 계획을 세워 애니매틱스까지 완성했습니다."],
-      why: "" },
-    { slug: "artwork", title: "그림", en: "Art Work", img: "study/artwork-1.jpg",
-      summary: "손으로 그린 그림 작업.",
-      body: ["손으로 그린 아크릴 그림 작업입니다."],
       why: "" },
     { slug: "maya", title: "Maya 및 Houdini", en: "Maya & Houdini", img: "gallery/study-maya/ic518.jpg",
       summary: "모델링, 셰이딩, 스크립팅, 이펙트, 렌더링 파이프라인.",

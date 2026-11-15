@@ -101,7 +101,7 @@ function write(rel, html) {
   <div class="grid wide">${C.projects.filter((x) => x.home).slice(0, 6).map((r) => card(r, "projects", p)).join("")}</div></section>
 <section class="sec" id="activities">${sh("03", "활동", "activities.html")}
   <div class="list">${C.activities.map((x) => actRow(x, p)).join("")}</div></section>
-<section class="sec" id="studies">${sh("04", "배움", "studies.html", "공학 밖에서 배운 것들")}
+<section class="sec" id="studies">${sh("04", "배움", "studies.html", "수업과 개인 공부로 배운 것들")}
   <div class="studies">${C.studies.map((s) => studyCell(s, p)).join("")}</div></section>
 <section class="sec" id="contact">${sh("05", "연락")}${contactBlock(p)}</section>`;
   write("index.html", page({ title: `${C.name} · ${C.nameEn}`, p, current: "", body }));
@@ -113,8 +113,8 @@ const listPage = (file, title, sub, inner) =>
 listPage("research.html", "연구", "RESEARCH", `<div class="grid tall">${C.research.map((r) => card(r, "research", "")).join("")}</div>`);
 listPage("projects.html", "프로젝트", "PROJECTS", `<div class="grid wide">${C.projects.map((r) => card(r, "projects", "")).join("")}</div>`);
 listPage("activities.html", "활동", "ACTIVITIES", `<div class="list">${C.activities.map((x) => actRow(x, "")).join("")}</div>`);
-listPage("studies.html", "배움", "공학 밖에서 배운 것들",
-  `<p class="prose" style="max-width:720px;margin-bottom:36px;color:var(--body)">가상 공간과 옷, 움직임을 제대로 만들고 싶어서 공학 밖의 수업들도 찾아 들었습니다. 지금 하는 연구의 관심이 어디서 왔는지 보여주는 기록입니다.</p>
+listPage("studies.html", "배움", "STUDIES",
+  `<p class="prose" style="max-width:720px;margin-bottom:36px;color:var(--body)">전공 수업과 개인 공부로 배운 것들입니다. 3D 제작과 엔진 같은 공학 과목부터 색채학, 제도처럼 다른 분야 수업까지 함께 정리했습니다.</p>
    <div class="studies">${C.studies.map((s) => studyCell(s, "")).join("")}</div>`);
 
 // ---------- 웹 플레이 섹션 (스타일·스크립트를 섹션 안에 같이 넣어 site.css/js를 건드리지 않음)
@@ -171,7 +171,7 @@ ${A.courses ? `<section class="sec">${sh("", "주요 수강 과목")}${tl(A.cour
 <section class="sec">${sh("", "논문 · 발표")}<div class="tl">${A.pubs.map(([y, ti, au, u]) => `<span class="y">${esc(y)}</span><div><a href="${esc(u)}" target="_blank" rel="noopener"><b>${esc(ti)}</b> <span style="color:var(--acc)">↗</span></a><br><span>${esc(au).replace("김주란", "<u>김주란</u>")}</span></div>`).join("")}</div></section>
 <section class="sec">${sh("", "수상")}${tl(A.awards.map(([y, t]) => [y, t]))}<p style="margin-top:18px"><a href="history.html" style="border-bottom:1px solid;color:var(--acc)">이전 수상·활동 내역 보기 →</a></p></section>
 <section class="sec">${sh("", "기술")}${tl(A.skills.map(([k, v]) => [k, v]))}</section>
-<section class="sec">${sh("", "공학 밖에서 배운 것", "studies.html")}<div class="studies">${C.studies.map((s) => studyCell(s, "")).join("")}</div></section>
+<section class="sec">${sh("", "배운 것", "studies.html")}<div class="studies">${C.studies.map((s) => studyCell(s, "")).join("")}</div></section>
 <section class="sec">${sh("", "연락")}${contactBlock("")}</section>`;
   write("about.html", page({ title: `소개 · ${C.name}`, p: "", current: "about.html", body }));
 }
