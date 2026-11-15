@@ -169,11 +169,17 @@ C.studies.forEach((it, i, a) => detail("study", a, it, i, "배움"));
 ${A.etc ? `<section class="sec">${sh("", "그 밖의 활동")}<p class="prose" style="max-width:820px;color:var(--body)">${esc(A.etc)}</p></section>` : ""}
 ${A.courses ? `<section class="sec">${sh("", "주요 수강 과목")}${tl(A.courses)}</section>` : ""}
 <section class="sec">${sh("", "논문 · 발표")}<div class="tl">${A.pubs.map(([y, ti, au, u]) => `<span class="y">${esc(y)}</span><div><a href="${esc(u)}" target="_blank" rel="noopener"><b>${esc(ti)}</b> <span style="color:var(--acc)">↗</span></a><br><span>${esc(au).replace("김주란", "<u>김주란</u>")}</span></div>`).join("")}</div></section>
-<section class="sec">${sh("", "수상")}${tl(A.awards.map(([y, t]) => [y, t]))}</section>
+<section class="sec">${sh("", "수상")}${tl(A.awards.map(([y, t]) => [y, t]))}<p style="margin-top:18px"><a href="history.html" style="border-bottom:1px solid;color:var(--acc)">이전 수상·활동 내역 보기 →</a></p></section>
 <section class="sec">${sh("", "기술")}${tl(A.skills.map(([k, v]) => [k, v]))}</section>
 <section class="sec">${sh("", "공학 밖에서 배운 것", "studies.html")}<div class="studies">${C.studies.map((s) => studyCell(s, "")).join("")}</div></section>
 <section class="sec">${sh("", "연락")}${contactBlock("")}</section>`;
   write("about.html", page({ title: `소개 · ${C.name}`, p: "", current: "about.html", body }));
 }
+// ---------- 이전 수상·활동 내역 (메뉴에 없는 내부 페이지, 소개에서만 링크)
+write("history.html", page({ title: `이전 수상·활동 내역 · ${C.name}`, p: "", current: "about.html", body: `
+<a class="back" href="about.html">← 소개로 돌아가기</a>
+<div class="dhead"><p class="kick">ARCHIVE</p><h1>이전 수상·활동 내역</h1><p class="lede">어릴 때부터 받은 상장과 활동 기록을 정리하고 있습니다.</p></div>
+<section class="sec"><div style="padding:56px 24px;border:1px dashed var(--line);text-align:center;color:var(--mute)"><b style="display:block;font-size:20px;color:var(--ink);margin-bottom:8px">준비 중입니다</b>상장과 기록을 정리해서 곧 올릴게요.</div></section>` }));
+
 write("images/필요한-사진-목록.md", "# 아직 없는 사진\n\n이 이름으로 images/ 폴더에 넣고 `node tools/build.js` 하면 자동으로 들어갑니다.\n\n" + [...MISSING].sort().map((m) => "- " + m).join("\n") + "\n");
 console.log("built, missing:", MISSING.size);
