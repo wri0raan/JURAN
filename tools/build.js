@@ -137,8 +137,8 @@ function detail(dir, list, it, i, kick) {
   const play = it.play ? `<section class="play" data-play="${esc(playSrc)}"><h2 class="mg-h">웹에서 플레이</h2>${it.play.note ? `<p class="play-note">${esc(it.play.note)}</p>` : ""}<div class="play-stage" style="--cover:url('${p}images/${esc(it.img)}')${playStyle}"><button class="play-start" type="button">▶ 플레이</button></div><div class="btns"><a class="btn" href="${esc(playSrc)}" target="_blank" rel="noopener">새 창으로 열기 ↗</a><button class="btn play-fs" type="button">전체화면</button></div>${it.play.keys ? `<p class="play-keys">${it.play.keys}</p>` : ""}${PLAY_ASSETS}</section>` : "";
   const meta = (it.meta || []).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
   const body = `
-<a class="back" href="${p}${dir === "study" ? "studies" : dir}.html">← ${kick} 목록</a>
-<div class="dhead"><p class="kick">${esc(it.en || [it.year, it.badge].filter(Boolean).join(" · "))}</p><h1>${esc(it.title || it.name)}</h1><p class="lede">${esc(it.summary)}</p>${(it.links || []).length ? `<div class="btns">${it.links.map(([l, u]) => `<a class="btn" href="${esc(u)}" target="_blank" rel="noopener">${esc(l)} ↗</a>`).join("")}</div>` : ""}</div>
+<a class="back" href="${it.back ? it.back[0] : `${p}${dir === "study" ? "studies" : dir}.html`}">← ${it.back ? it.back[1] : `${kick} 목록`}</a>
+<div class="dhead"><p class="kick">${esc(it.en || [it.year, it.badge].filter(Boolean).join(" · "))}</p><h1>${esc(it.title || it.name)}</h1><p class="lede">${esc(it.summary)}</p>${(it.links || []).length || it.sub ? `<div class="btns">${it.sub ? `<a class="btn" href="${esc(it.sub[1])}" style="background:var(--acc);color:#fff;border-color:var(--acc)">${esc(it.sub[0])} →</a>` : ""}${(it.links || []).map(([l, u]) => `<a class="btn" href="${esc(u)}" target="_blank" rel="noopener">${esc(l)} ↗</a>`).join("")}</div>` : ""}</div>
 <figure class="dhero${it.fit && !it.heroVideo ? " fit" : ""}">${it.heroVideo && has(it.heroVideo) ? `<video src="${p}images/${it.heroVideo}" poster="${p}images/${it.img}" autoplay muted loop playsinline style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#000"></video>` : img(it.img, it.title || it.name, p)}</figure>
 <div class="dbody">
   <div class="prose">${(it.body || []).map((x) => `<p>${x}</p>`).join("")}${it.why ? `<p class="why">${esc(it.why)}</p>` : ""}${it.link && dir === "study" ? `<p><a href="${p}${it.link}" style="border-bottom:1px solid">관련 작업 보기 →</a></p>` : ""}</div>
@@ -152,6 +152,8 @@ C.research.forEach((it, i, a) => detail("research", a, it, i, "연구"));
 C.projects.forEach((it, i, a) => detail("projects", a, it, i, "프로젝트"));
 C.activities.filter((x) => !x.link).forEach((it, i, a) => detail("activities", a, it, i, "활동"));
 C.studies.forEach((it, i, a) => detail("study", a, it, i, "배움"));
+// 목록에 안 나오는 세부 페이지 (예: 라온S 프로젝트 상세). 부모 페이지의 sub 버튼으로만 들어감
+(C.subpages || []).forEach((it) => detail(it.dir, [it], it, 0, ""));
 
 // ---------- about
 {
