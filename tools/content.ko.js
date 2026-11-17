@@ -262,14 +262,14 @@ module.exports = {
   ],
 
   activities: [
-    { slug: "cucg", year: "2022 – 현재", name: "CUCG Lab 학부연구생", role: "그래픽스 · 시뮬레이션 · XR", img: "cucg.jpg", gallery: ["cucg-1.jpg", "cucg-2.jpg", "cucg-3.jpg", "cucg-4.jpg"],
+    { slug: "cucg", year: "2022 – 현재", name: "**CUCG Lab** 학부연구생", role: "그래픽스 · 시뮬레이션 · XR", img: "cucg.jpg", gallery: ["cucg-1.jpg", "cucg-2.jpg", "cucg-3.jpg", "cucg-4.jpg"],
       summary: "가톨릭대 컴퓨터그래픽스 연구실 학부연구생으로, 이 포트폴리오의 연구 대부분을 여기서 했습니다.",
       body: [
         "가톨릭대학교 CUCG Lab에서 2022년부터 학부연구생으로 있습니다.",
         "애니메트로닉스 연구로 KCGS 2022에서 발표해 우수발표상을 받았고, 같은 학회에서 학생 봉사자로 학술장 세팅, 마이크 전달, 사진 기록, 부스 운영을 했습니다. XR 테이크아웃 카페로 HCI Korea 창의상 우수상을 받았고, 군중 시뮬레이션 연구를 KCGS 2025에서 포스터와 데모로 발표했습니다. 지금은 반려견 보행 물리 시뮬레이션으로 졸업논문을 쓰고 있습니다.",
       ],
       meta: [["기간", "2022.07 – 현재"], ["역할", "학부연구생"], ["소속", "가톨릭대학교"]] },
-    { slug: "siggraph-2024", year: "2024", name: "SIGGRAPH Asia 2024 도쿄 · 학생 자원봉사자(SV) 선발", role: "전시 · 등록 · 체험 부스", img: "siggraph-2024.jpg", gallery: ["siggraph-2024-1.jpg", "siggraph-2024-2.jpg", "siggraph-2024-3.jpg", "siggraph-2024-4.jpg"],
+    { slug: "siggraph-2024", year: "2024", logo: ["siggraph.png"], name: "**SIGGRAPH Asia 2024** 도쿄 · 학생 자원봉사자(SV) **선발**", role: "전시 · 등록 · 체험 부스", img: "siggraph-2024.jpg", gallery: ["siggraph-2024-1.jpg", "siggraph-2024-2.jpg", "siggraph-2024-3.jpg", "siggraph-2024-4.jpg"],
       summary: "SIGGRAPH Asia 2024 학생 자원봉사자로 일하며 NVIDIA, Disney Research 연구진과 이야기하고 PIXAR 멘토링을 받았습니다.",
       body: [
         "SIGGRAPH Asia 2024에 학생 자원봉사자(SV)로 선발돼 입장 관리, 부스 운영, 현장 안내를 맡았습니다.",
@@ -277,7 +277,7 @@ module.exports = {
         "NVIDIA, Disney Research 연구진과 연구 관심사를 이야기하고 조언을 받았고, PIXAR 멘토링 세션에서 포트폴리오 구성과 작업을 시작하는 방법에 대해 들었습니다. 일본, 한국, 미국, 캐나다, 독일, 뉴질랜드에서 온 봉사자들과 함께 일했습니다.",
       ],
       meta: [["기간", "2024.12"], ["장소", "일본 도쿄"], ["역할", "전시 · 등록 · 체험 부스 지원"]] },
-    { slug: "siggraph-2022", year: "2022", name: "SIGGRAPH Asia 2022 대구 · 학생 자원봉사자(SV) 선발", role: "학회 운영 · 참가자 지원", img: "gallery/activities-siggraph-2022/ic221.jpg",
+    { slug: "siggraph-2022", year: "2022", logo: ["siggraph.png"], name: "**SIGGRAPH Asia 2022** 대구 · 학생 자원봉사자(SV) **선발**", role: "학회 운영 · 참가자 지원", img: "gallery/activities-siggraph-2022/ic221.jpg",
       gallery: ["siggraph-2022-1.jpg", "siggraph-2022-3.jpg", "siggraph-2022-4.jpg"],
       summary: "SIGGRAPH Asia 2022 학생 자원봉사자로 세션 운영과 참가자 안내를 맡았습니다. 처음으로 학회를 안쪽에서 본 경험입니다.",
       body: [
@@ -286,12 +286,12 @@ module.exports = {
         "저녁에는 봉사자 40여 명의 식당 예약, 버스 인솔, 결제를 맡았고, 혼자 식사하던 외국인 봉사자를 불러 함께했습니다. 그때 ‘다음에는 발표자로 오겠다’고 마음먹었습니다.",
       ],
       meta: [["기간", "2022.12"], ["장소", "대구"], ["역할", "학회 운영 · 참가자 지원"]] },
-    { slug: "gstar-2024", year: "2024", name: "G-STAR 2024 학과 탐방대", role: "탐방대", img: "gallery/activities-gstar-2024/p160.jpg",
+    { slug: "gstar-2024", year: "2024", name: "**G-STAR 2024** 학과 탐방대", role: "탐방대", img: "gallery/activities-gstar-2024/p160.jpg",
       summary: "학과 탐방대로 선발돼 부산 벡스코에서 열린 G-STAR 2024에 다녀왔습니다.",
       body: ["학과 탐방대로 선발돼 2024년 11월 14일부터 16일까지 부산 벡스코에서 열린 G-STAR 2024를 탐방했습니다. 넥슨, 크래프톤 등 게임사 부스를 돌며 신작 시연과 전시 연출을 보고, 그래픽과 인터랙션이 관객 앞에서 어떻게 쓰이는지 살폈습니다."],
       meta: [["기간", "2024.11.14 – 11.16"], ["장소", "부산 벡스코"], ["구분", "학과 탐방대 선발"]] },
-    { slug: "lul", year: "2024", name: "게임 개발 팀 LUL(Level Up Labs) 창립", role: "창립 · 팀 리드", img: "sangun.jpg", link: "projects/sangun.html" },
-    { slug: "raons", year: "2021 – 2023", name: "라온S 회장 · 학과 공식 소모임", role: "회장 · 지원사업 기획", img: "raons.jpg", sub: ["지구 지킴이 프로젝트 상세 보기", "raons-project.html"],
+    { slug: "lul", year: "2024", name: "게임 개발 팀 **LUL(Level Up Labs) 창립**", role: "창립 · 팀 리드", img: "sangun.jpg", link: "projects/sangun.html" },
+    { slug: "raons", year: "2021 – 2023", name: "**라온S 회장** · 학과 공식 소모임", role: "회장 · 지원사업 기획", img: "raons.jpg", sub: ["지구 지킴이 프로젝트 상세 보기", "raons-project.html"],
       gallery: ["raons-1.jpg", "raons-2.jpg", "raons-3.jpg", "raons-4.jpg"],
       links: [["로블록스 게임 ‘심곡천의 환경을 지켜요’", "https://www.roblox.com/games/11419714365/unnamed"]],
       summary: "학과 공식 소모임 라온S 회장으로, 부천시 청년 커뮤니티 지원사업 ‘청년부터 시작하는 녹색 습관: 재사용 컵 문화’를 기획해 영상, 게임, 컵 나눔 부스로 진행했습니다.",
@@ -305,7 +305,7 @@ module.exports = {
         "<b>내 역할</b> · 답사부터 지원서, 세 프로젝트 구성까지 전체를 기획했습니다(지도 임학순 교수님). 「프랜차이즈 커피매장의 일회용 컵 줄이기에 대한 방안」 논문을 참고해 방향을 잡았고, 예산안과 결산, 컵 디자인, 홍보 포스터, 부스 운영, 소개 사이트 제작, 결과 보고를 맡았습니다. 영상은 이채연·황민기·김서호, 게임은 정화영·김예원 팀원이 함께 만들었습니다.",
       ],
       meta: [["기간", "2021.03 – 2023.03"], ["역할", "회장 · 총괄 기획 · 컵·포스터 디자인"], ["지원사업", "부천시 청년 커뮤니티 지원 프로젝트 선정 (2022 – 2023)"], ["결과물", "홍보 영상 · 로블록스 게임 · 리유저블 컵 부스"]] },
-    { slug: "supporters", year: "2021", name: "서포터즈 · 기자단 활동 (아리스토텔러스 · KOREA FESTA · 엔닷라이트)", role: "최우수활동상 · 한국 문화 · 메타버스", img: "aristotellers.jpg",
+    { slug: "supporters", year: "2021", name: "서포터즈 · 기자단 활동 (아리스토텔러스 · KOREA FESTA · 엔닷라이트)", role: "**최우수활동상** · 한국 문화 · 메타버스", img: "aristotellers.jpg",
       summary: "아리랑스쿨 기자단(최우수활동상), KOREA FESTA 한국 문화 크리에이터, 엔닷라이트 메타버스 공간 디자인 서포터즈로 활동했습니다.",
       body: [
         "<b>① 아리랑스쿨 기자단 ‘아리스토텔러스’ 7기 · 최우수활동상</b>",
@@ -316,7 +316,7 @@ module.exports = {
         "2021년 6월 28일부터 7월 23일까지 엔닷라이트 대학생 서포터즈로 메타버스 공간을 구축하는 활동을 하고 수료했습니다.",
       ],
       meta: [["① 기간", "2021.03 – 2021.06"], ["① 수상", "최우수활동상 (아리랑스쿨, 2021.06)"], ["② 기간", "2021.07.03 – 07.17"], ["② 역할", "한국 문화 크리에이터 · 노래 수업"], ["③ 기간", "2021.06.28 – 07.23"], ["③ 역할", "메타버스 공간 디자인 서포터즈"]] },
-    { slug: "education", year: "2021 – 2022", name: "교육 · 수료 · 자격", role: "디지털리터러시 자격 · NVIDIA DLI · AR/VR 기획 등", img: "education.jpg", fit: true,
+    { slug: "education", year: "2021 – 2022", logo: ["nvidia.svg"], name: "교육 · 수료 · 자격", role: "디지털리터러시 자격 · **NVIDIA DLI** · AR/VR 기획 등", img: "education.jpg", fit: true,
       summary: "대학 초기에 창업대학과 외부 기관 교육을 들으며 딥러닝, AR/VR 콘텐츠 기획, 메타버스, 빅데이터 시각화를 배우고 자격을 땄습니다.",
       body: [
         "<b>자격</b> · 디지털리터러시활용능력 (한국국어능력평가협회, 2022.02)",
@@ -327,7 +327,7 @@ module.exports = {
         "아래 기록은 수료증과 자격증입니다. 학번 같은 개인정보는 가렸습니다.",
       ],
       meta: [["기간", "2021.02 – 2022.02"], ["자격", "디지털리터러시활용능력"], ["수료", "9개 과정 · NVIDIA DLI 포함"]] },
-    { slug: "gdgoc", year: "2025 – 2026", name: "GDGoC CUK · DevRel 팀 리더 (운영진)", role: "운영진 · 행사 기획 · 스터디", img: "gallery/activities-gdgoc/p453.jpg", gallery: ["gdgoc-1.jpg", "gdgoc-2.jpg"],
+    { slug: "gdgoc", year: "2025 – 2026", logo: ["gdg.svg"], name: "**GDGoC CUK** · **DevRel 팀 리더** (운영진)", role: "운영진 · 행사 기획 · 스터디", img: "gallery/activities-gdgoc/p453.jpg", gallery: ["gdgoc-1.jpg", "gdgoc-2.jpg"],
       summary: "구글 개발자 학생 커뮤니티 GDGoC CUK 6기 운영진으로 DevRel 팀을 이끌었습니다. 그 전 해에는 내부 Unity 스터디 ‘반죽뭉치’를 이끌었습니다.",
       body: [
         "<b>DevRel 팀 리더 · 운영진 (2026, 6기)</b> · Google Developer Groups on Campus CUK(GDGoC) 운영진으로 DevRel 팀을 맡아 커뮤니티 행사를 기획하고, 부스를 운영하고, 멤버들이 어울릴 자리를 만들었습니다. 전 해의 스터디 운영을 보고 운영진 제안을 받았습니다.",

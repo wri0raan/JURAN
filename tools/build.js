@@ -2,6 +2,9 @@
 const fs = require("fs");
 const path = require("path");
 const C = require("./content.ko.js");
+// 활동 목록: name/role 안의 **강조**는 목록에서만 볼드, 상세 페이지 제목 등에선 표시 없이 사용
+const unmark = (s) => String(s ?? "").replace(/\*\*/g, "");
+C.activities.forEach((a) => { a.nameMd = a.name; a.roleMd = a.role; a.name = unmark(a.name); a.role = unmark(a.role); });
 const ROOT = path.join(__dirname, "..");
 
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -56,7 +59,9 @@ const card = (it, dir, p) => `<a class="card" href="${p}${dir}/${it.slug}.html">
   ${it.tags ? `<div class="tags">${it.tags.map((t) => `<span>${esc(t)}</span>`).join("")}</div>` : ""}
 </a>`;
 
-const actRow = (a, p) => `<a class="row" href="${p}${a.link || `activities/${a.slug}.html`}"><span class="y">${esc(a.year || "—")}</span><span class="t">${esc(a.name)}</span><span class="r">${esc(a.role)}</span>${img(a.img, a.name, p)}</a>`;
+const rich = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
+const logo = (a, p) => (a.logo || []).filter((f) => has(`logos/${f}`)).map((f) => `<img class="lg" src="${p}images/logos/${f}" alt="" loading="lazy">`).join("");
+const actRow = (a, p) => { const lg = logo(a, p); return `<a class="row" href="${p}${a.link || `activities/${a.slug}.html`}"><span class="y">${esc(a.year || "—")}</span><span class="t"><span class="lgs">${lg}</span><span>${rich(a.nameMd)}</span></span><span class="r">${rich(a.roleMd)}</span>${img(a.img, a.name, p)}</a>`; };
 
 const studyCell = (s, p) => `<a href="${p}study/${s.slug}.html"><span class="en">${esc(s.en)}</span><h3>${esc(s.title)}</h3><p>${esc(s.summary)}</p></a>`;
 
