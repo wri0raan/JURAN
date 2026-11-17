@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css?v=392d4e96">
+<link rel="stylesheet" href="../assets/site.css?v=5814578e">
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -22,7 +22,7 @@
 <main class="wrap">
 
 <a class="back" href="../research.html">← 연구 목록</a>
-<div class="dhead"><p class="kick">2025 · KCGS 2025 포스터 · AI 군중 시뮬레이션</p><h1>군중 시뮬레이션 연구</h1><p class="lede">밀도에 따라 스스로 움직이는 울타리로 7000명 대피 시간을 24.6% 줄인 연구와, 군중 사이에 감정이 퍼지는 과정을 시뮬레이션한 연구입니다.</p><div class="btns"><a class="btn" href="../papers/crowd-affective-2025.pdf" target="_blank" rel="noopener">AI 군중 시뮬레이션 논문 (PDF) ↗</a></div></div>
+<div class="dhead"><p class="kick">2025 · KCGS 2025 포스터 · AI 군중 시뮬레이션</p><h1>군중 시뮬레이션 연구</h1><p class="lede">밀도에 따라 스스로 움직이는 울타리로 7000명 대피 시간을 24.6% 줄인 연구와, 군중 사이에 감정이 퍼지는 과정을 시뮬레이션한 연구입니다.</p><div class="btns"><a class="btn" href="../papers/crowd-affective-2025.pdf" target="_blank" rel="noopener">AI 군중 시뮬레이션 논문 (PDF) ↗</a><a class="btn" href="https://github.com/wri0raan/CrowdSim" target="_blank" rel="noopener">GitHub에서 보기 ↗</a></div></div>
 <figure class="dhero"><video src="../images/gallery/research-crowd-sim/v-demo.mp4" poster="../images/crowd-play.gif" autoplay muted loop playsinline style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#000"></video></figure>
 <div class="dbody">
   <div class="prose"><p><b>① 자율 주행 울타리를 이용한 군중 흐름 제어 (KCGS 2025 포스터)</b></p><p>고밀도 군중에서는 고정 울타리가 오히려 흐름을 막을 수 있습니다. 실시간 밀도에 따라 자리를 옮기는 동적 울타리를 제안했습니다.</p><p><b>실험</b> · 이태원 사고 지점의 H형 골목을 모델링하고(왼쪽 도로는 5m 높은 경사), 울타리 없음, 고정 울타리, 동적 울타리 세 조건에서 4000~7000명이 골목을 빠져나가는 시간을 비교했습니다. 동적 울타리 6개는 평소에는 흐름을 막지 않는 위치에 있다가, 밀도가 1㎡당 4명 이상이 되면 이동해 세 가지 포메이션을 10초 간격으로 바꾸며 방향별 흐름을 차례로 풀고, 2명 미만이 되면 제자리로 돌아갑니다.</p><p><b>결과</b> · 7000명 기준 통과 시간은 울타리 없음 7.29분, 고정 울타리 8.17분, 동적 울타리 5.50분이었습니다. 다음 단계로는 강화학습으로 울타리가 상황에 맞는 포메이션을 고르게 하는 방향을 제안했습니다.</p><p>연구실의 대규모 군중 시뮬레이션 프로젝트(GPU 실시간 군중, 물리 기반 인체 시뮬레이션, 경사로 넘어짐 사고 재현)와 함께 진행했습니다. 아래 기록 중 빨강·초록 인물이 여섯 칸으로 나뉜 이미지는 연구실의 관련 연구 ‘개인별 속도차를 반영한 물리 기반 군중 탈출 시뮬레이션’(KCGS 2024) 결과입니다. 대표 이미지는 ② 연구의 시뮬레이션 화면입니다.</p><p><b>② 정서 기반 행동 반응 확산을 활용한 AI 군중 시뮬레이션 프레임워크</b></p><p>기존 군중 시뮬레이션은 충돌 회피와 경로 탐색에 집중해서, 놀람이나 공포처럼 사람 사이에 퍼지는 감정은 다루지 못합니다. 이 연구는 각 사람의 감정을 쾌–불쾌, 각성–이완 두 축으로 두고, 사건의 강도와 거리, 역할별 민감도에 따라 감정이 바뀌어 주변으로 번지는 모델(ASP)을 군중 시뮬레이션에 넣었습니다.</p><p><b>방법</b> · 장소와 인원을 입력하면 규칙 기반 또는 LLM이 언제, 어디서, 얼마나 강한 사건이 일어날지 담은 이벤트 계획을 JSON으로 만듭니다. 바뀐 감정은 이동 속도, 회피 반응, 표정과 제스처에 반영되고, HUD와 감정 히트맵으로 공간에 퍼지는 모습을 보여 줍니다. 실제 신도림역 B1–B2 구조를 Unity 6로 모델링하고 NavMesh와 RVO로 층간 이동과 충돌 회피를 처리했으며, 가까이는 ReadyPlayerMe 아바타, 멀리는 단순 모델을 쓰는 LOD로 렌더링 부담을 줄였습니다.</p><p><b>내 역할</b> · 단독 저자로 설계, 구현, 시각화, 논문 작성을 했습니다.</p></div>
@@ -32,6 +32,6 @@
 <nav class="pager"><a href="animatronics.html">← 이전<b>외부 자력으로 움직이는 촉수 애니메트로닉스</b></a><a href="xr-cafe.html" style="text-align:right">다음 →<b>XR 테이크아웃 카페</b></a></nav>
 </main>
 <footer><div class="wrap"><span>© 2026 김주란 Juran Kim</span><a href="https://github.com/wri0raan">github.com/wri0raan</a></div></footer>
-<script src="../assets/site.js?v=0f561ce5"></script>
+<script src="../assets/site.js?v=64ba14eb"></script>
 </body>
 </html>

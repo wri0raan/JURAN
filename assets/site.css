@@ -204,6 +204,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 /* 기록 갤러리 (masonry) */
 .mg{padding:0 0 56px}
+.fig-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 24px}
+.fig-grid figure{margin:0}
+.fig-grid a{display:block;background:#fff;border:1px solid var(--line);padding:10px}
+.fig-grid .mg-i{margin:0}
+.fig-grid .mg-i img{width:100%;height:260px;object-fit:contain}
+.fig-grid figcaption{font-size:13px;color:var(--mute);margin-top:8px;line-height:1.5}
+@media (max-width:700px){.fig-grid{grid-template-columns:1fr}.fig-grid .mg-i img{height:auto}}
 .mg-h{font-family:var(--serif);font-size:22px;margin-bottom:18px}
 .mg:not(.has):not(.editing){display:none}
 .masonry{columns:3 260px;column-gap:14px}

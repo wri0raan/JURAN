@@ -46,7 +46,32 @@ module.exports = {
   research: [
     {
       slug: "gait", title: "영상으로 보정한 반려견 물리 모델과 슬개골 탈구 보행", year: "2026 – 진행 중", badge: "졸업논문",
-      img: "gait-main.jpg", heroImg: "gallery/research-gait/03-f03.jpg", tags: ["물리 시뮬레이션", "생체역학", "궤적 최적화", "영상 기반 보정"],
+      links: [["GitHub에서 보기", "https://github.com/wri0raan/canine-patella-sim"]],
+      img: "gait-main.jpg", heroImg: "gait-hero.jpg",
+      figures: [
+        ["figures/gait/fig01.png", "그림 1. 연구의 전체 과정."],
+        ["figures/gait/fig02.png", "그림 2. 임상 논문이 측정한 세 관절(고관절, 무릎, 비절)의 각도 위치."],
+        ["figures/gait/fig03.png", "그림 3. 무릎 신전 한계."],
+        ["figures/gait/fig04.png", "그림 4. 등급별 무릎 각도 범위(a), 비절 가동범위(b), 고관절 가동범위(c)."],
+        ["figures/gait/fig05.png", "그림 5. (a) 물리 모델의 뼈대, (b) 같은 모델에 피부를 입힌 모습."],
+        ["figures/gait/fig06.jpg", "그림 6. 두 뒷다리의 좌우 이름 뒤바뀜과 동적 계획법에 의한 이어 붙이기(구간 a, 프레임 205, 222, 240, 258)."],
+        ["figures/gait/fig07.jpg", "그림 7. 직접 표시한 점의 예(보정용 구간 a 두 장, 시험용 구간 b 두 장)."],
+        ["figures/gait/fig08.png", "그림 8. 표시한 점에 대한 추적의 위치 오차(시험용 구간 b, 중앙값, 정강이 길이의 %)."],
+        ["figures/gait/fig09.png", "그림 9. 추적한 각도와 표시한 점(관절 중심으로 환산)의 각도."],
+        ["figures/gait/fig10.jpg", "그림 10. Raeo 방사선 사진(왼쪽과 오른쪽 뒷다리 측면)에서 읽은 피부 표식과 관절 중심의 차이."],
+        ["figures/gait/fig11.png", "그림 11. 엉덩이 표식을 꼬리 쪽으로 옮겼을 때 모델의 무릎 각도 평균(왼쪽)과 정상 대비 변화(오른쪽)."],
+        ["figures/gait/fig12.png", "그림 12. 엉덩이 기준점의 정의와 정상 걸음의 평균 무릎 각도."],
+        ["figures/gait/fig13.png", "그림 13. 정상 걸음의 관절 각도 가동범위."],
+        ["figures/gait/fig14.png", "그림 14. 모델(fitR3)이 만든 정상, 2기, 3기 걸음의 무릎 각도(방사선 기준점, 14초 중 2~6초)."],
+        ["figures/gait/fig15.png", "그림 15. 판정 검사 영상 5구간의 평균 무릎 각도(점)와 모델의 등급별 예측(점선), 판정 폭(띠, ±6.1도)."],
+        ["figures/gait/fig16.jpg", "그림 16. 판정 영상의 한 장면(검사 영상 5)."],
+        ["figures/gait/fig17.jpg", "그림 17. 검사 영상 1."],
+        ["figures/gait/fig18.jpg", "그림 18. 검사 영상 2."],
+        ["figures/gait/fig19.jpg", "그림 19. 검사 영상 3."],
+        ["figures/gait/fig20.jpg", "그림 20. 검사 영상 4."],
+        ["figures/gait/fig21.jpg", "그림 21. 검사 영상 5."],
+      ],
+      tags: ["물리 시뮬레이션", "생체역학", "궤적 최적화", "영상 기반 보정"],
       summary: "반려견 레오의 영상으로 물리 모델을 맞추고, 슬개골 탈구 등급별 무릎 한계를 넣었을 때 보행이 어떻게 바뀌는지 임상 측정값과 비교합니다.",
       body: [
         "슬개골 탈구가 있는 소형견은 무릎을 끝까지 펴지 못하고, 고관절과 발목으로 이를 보상하며 걷습니다. 이 연구는 무릎 신전 한계만으로 그런 보상 보행이 나타나는지를 물리 시뮬레이션으로 확인합니다.",
@@ -73,7 +98,7 @@ module.exports = {
     {
       slug: "crowd-sim", title: "군중 시뮬레이션 연구", year: "2025", badge: "KCGS 2025 포스터 · AI 군중 시뮬레이션",
       img: "crowd-play.gif", heroVideo: "gallery/research-crowd-sim/v-demo.mp4", gallery: ["crowd.jpg", "crowd-2.jpg"], fit: true, tags: ["군중 시뮬레이션", "안전", "정서 확산", "LLM"],
-      links: [["AI 군중 시뮬레이션 논문 (PDF)", "../papers/crowd-affective-2025.pdf"]],
+      links: [["AI 군중 시뮬레이션 논문 (PDF)", "../papers/crowd-affective-2025.pdf"], ["GitHub에서 보기", "https://github.com/wri0raan/CrowdSim"]],
       summary: "밀도에 따라 스스로 움직이는 울타리로 7000명 대피 시간을 24.6% 줄인 연구와, 군중 사이에 감정이 퍼지는 과정을 시뮬레이션한 연구입니다.",
       body: [
         "<b>① 자율 주행 울타리를 이용한 군중 흐름 제어 (KCGS 2025 포스터)</b>",
@@ -107,6 +132,7 @@ module.exports = {
   projects: [
     {
       slug: "acupoint", title: "AI 한의사와 혈자리 체험", year: "2025", badge: "박물관 전시",
+      links: [["GitHub에서 보기", "https://github.com/wri0raan/mediapipeDoc"]],
       img: "gallery/projects-acupoint/p087.jpg", tags: ["Unity", "MediaPipe", "트래킹", "전시"], home: true,
       summary: "AI 한의사에게 불편한 증상을 고르면, 몸을 실시간으로 추적해 맞는 혈자리를 찾아 주는 체험입니다. 국립과천과학관에 전시됐습니다.",
       body: [
@@ -118,6 +144,7 @@ module.exports = {
     },
     {
       slug: "tracking", title: "트래킹 프로젝트", year: "2025", badge: "몸으로 하는 놀이 콘텐츠",
+      links: [["GitHub에서 보기", "https://github.com/wri0raan/mediapipeTracingProject"]],
       img: "tracking-play.gif", heroVideo: "gallery/projects-tracking/v-demo.mp4", tags: ["Unity", "MediaPipe", "포즈 추정", "인터랙션"],
       summary: "카메라 앞에서 몸을 움직이면 캐릭터가 따라 하고, 그림이 지워지고, 여행지 배경 속으로 들어가는 트래킹 놀이 모음과 요리 체험입니다.",
       body: [
@@ -202,7 +229,7 @@ module.exports = {
     {
       slug: "wordchain", title: "AI와 끝말잇기", year: "2025", badge: "학술연구 우수상 · 단독 개발",
       img: "wordchain-play.gif", heroVideo: "gallery/projects-wordchain/v-demo.mp4", tags: ["Unity", "GPT-4", "FastAPI", "TTS"], home: true,
-      links: [["논문 보기 (PDF)", "../papers/wordchain-2025.pdf"]],
+      links: [["논문 보기 (PDF)", "../papers/wordchain-2025.pdf"], ["GitHub에서 보기", "https://github.com/wri0raan/AIwordchainGame"]],
       summary: "단어 요정 ‘마리’와 끝말잇기를 주고받는 대화형 단어 게임입니다. 이 작업을 정리한 논문으로 학술연구 우수상을 받았습니다.",
       body: [
         "‘말랑말랑 AI 끝말잇기’는 단어 요정 ‘마리’와 끝말잇기를 하는 게임입니다. 단어를 입력하면 바로 검증하고, AI가 다음 단어를 만들어 음성으로 말해 줍니다.",

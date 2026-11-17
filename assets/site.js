@@ -65,6 +65,7 @@
   }
 
   // ---------- 기록 갤러리: 저장소 폴더에 새로 올라온 사진도 자동으로 불러오기
+  document.querySelectorAll(".figs").forEach(bindGallery);
   var galleries = document.querySelectorAll(".mg[data-key]");
   galleries.forEach(function (sec) {
     bindGallery(sec);
