@@ -47,7 +47,7 @@ module.exports = {
     {
       slug: "gait", title: "영상으로 보정한 반려견 물리 모델과 슬개골 탈구 보행", year: "2026 – 진행 중", badge: "졸업논문",
       links: [["GitHub에서 보기", "https://github.com/wri0raan/canine-patella-sim"]],
-      img: "gait-main.jpg", heroImg: "gait-hero.jpg",
+      img: "gait-main.jpg", heroImg: "figures/gait/fig05.png",
       figures: [
         ["figures/gait/fig01.png", "그림 1. 연구의 전체 과정."],
         ["figures/gait/fig02.png", "그림 2. 임상 논문이 측정한 세 관절(고관절, 무릎, 비절)의 각도 위치."],
